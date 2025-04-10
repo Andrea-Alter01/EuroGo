@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>「歐洲漫步」EuroGo</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.autoplay.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style_test.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+
+    <style>
+        /* 全局樣式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            /* height: 2000px; */
+            /* 增加滾動距離 */
+        }
+
+        /* 滑出 Navbar（滾動時出現） */
+        .sticky-navbar {
+            position: fixed;
+            top: -200px;
+            /* 預設隱藏 */
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            /* 背景顏色 */
+            padding: 30px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: rgba(0, 0, 0, 0.55);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: top 0.4s ease-in-out;
+            z-index: 100;
+        }
+
+        .sticky-navbar .logo {
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.55);
+        }
+
+        .sticky-navbar .menu {
+            display: flex;
+            justify-content: center;
+            /* 水平置中 */
+            align-items: center;
+            /* 垂直置中 */
+            list-style: none;
+            /* 去除預設的列表樣式 */
+            margin: 0 auto;
+            /* 將 ul 推到中間 */
+            padding: 0;
+            /* 移除預設的 padding */
+            width: fit-content;
+            /* 讓 ul 依照內容自動調整寬度 */
+        }
+
+        .sticky-navbar .d-flex {
+            display: flex;
+            justify-content: center;
+            /* 使 .d-flex 容器內的內容置中 */
+            align-items: center;
+            width: 100%;
+            /* 確保父容器寬度占滿整個區域 */
+        }
+
+        .sticky-navbar .menu li {
+            margin: 0 15px;
+        }
+
+        .sticky-navbar .menu a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.55);
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .sticky-navbar .menu a:hover {
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Hero 區域 */
+        .hero {
+            height: 100vh;
+            background: url('image/bgc.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8C8C9B;
+            font-size: 36px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .hero .box_03_1 {
+            position: absolute;
+            width: 640px;
+            height: 700px;
+            margin: 15px;
+            top: 80px;
+            right: 300px;
+            /* background-color: #1d241c8a; */
+            /* border-radius: 140px; 圓形由矩形切*/
+            border-radius: 10%;
+            text-align: center;
+            line-height: 240px;
+            z-index: 1;
+            /* 設置較低的層次 */
+        }
+
+        .hero .container h1,
+        .hero .container h5 {
+            position: relative;
+            /* 使 z-index 生效 */
+            z-index: 2;
+            /* 設置更高的層次 */
+        }
+
+        .hero .container h1 {
+            font-family: "DM Serif Text", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 80px;
+            color: #1E1E1E;
+            z-index: 2;
+        }
+
+        .hero .container .demo01 {
+            position: relative;
+            width: 900px;
+            height: 130px;
+            z-index: 2;
+            background-color: #fff;
+
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            /* Add border-radius to images */
+        }
+
+        #myCarousel {
+            max-width: 640px;
+            margin: 0 auto;
+            border-radius: 15px;
+            /* Add border-radius to the carousel */
+            overflow: hidden;
+            /* Ensure the border-radius applies to the images inside */
+            z-index: 0;
+
+        }
+
+        #myCarousel .f-carousel__slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .box_03_1 .f-carousel {
+            --f-button-next-pos: 10px;
+            --f-button-prev-pos: 10px;
+        }
+
+        .box_03_1 .f-carousel:hover {
+            --f-button-width: 38px;
+            --f-button-height: 38px;
+
+            --f-button-svg-width: 16px;
+            --f-button-svg-height: 16px;
+            --f-button-svg-stroke-width: 2.5;
+
+
+
+            --f-button-color: rgb(71 85 105);
+            --f-button-border-radius: 50%;
+            --f-button-shadow: 0 6px 12px -2px rgb(50 50 93 / 25%), 0 3px 7px -3px rgb(0 0 0 / 30%);
+
+            --f-button-bg: #fff;
+            --f-button-hover-bg: #f9f9f9;
+            --f-button-active-bg: #f0f0f0;
+        }
+
+        #keywords::placeholder {
+            text-align: center;
+        }
+
+        #s04 .display-1,
+        #s05 .display-1 {
+            font-family: "DM Serif Text", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 60px;
+            color: #1E1E1E;
+        }
+
+        #s04 .display-6,
+        #s05 .display-6 {
+
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+            color: #8C8C9B;
+            padding-top: 35px;
+        }
+
+        .custom-link {
+            text-decoration: none;
+            /* Remove default underline */
+            color: inherit;
+            /* Inherit the text color from its parent */
+            position: relative;
+            display: inline-block;
+            border-bottom: 2px solid;
+            border-color: #8C8C9B;
+        }
+
+        .custom-link-hover:hover .custom-link {
+            color: #007bff;
+            /* Change color of the link on hover */
+            border-color: #007bff;
+            transition: opacity 0.3s, border 0.4s;
+            transition: opacity 0.3s, color 0.5s;
+        }
+
+        .custom-link:hover i {
+            margin-left: 10px;
+            /* Adds a little space between the text and icon on hover */
+        }
+
+        .mycard {
+            flex: 1;
+            margin: 20px;
+            height: 320px;
+
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            /* 圓角 */
+            box-shadow: 0 0 20px rgba(51, 70, 80, 0.5);
+            /* 外陰影 */
+        }
+
+        .mycard::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(184, 61, 61, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 80%);
+            /* 圖片的灰階半透明漸層遮罩 */
+            z-index: 0;
+            /* z軸的位置 */
+        }
+
+        a.link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            /* z軸的位置 */
+        }
+
+        .mycard .img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 讓圖片適應容器寬高，且保持原有比例，但部分内容可能被剪切。 */
+            transition: transform 1s ease;
+            /* ease 為漸起始值較慢，中間速率加快，結尾趨 */
+            position: relative;
+            /* z-index: -1; */
+            /* z軸的位置 */
+        }
+
+        .info {
+            position: absolute;
+            /* width: calc(100% - 40px); */
+            width: 100%;
+            bottom: 0;
+            padding: 20px;
+            color: #ffffff;
+            transition: background-color 1.5s ease;
+        }
+
+        h2.title {
+            transition: color 1s ease;
+            margin-bottom: 12px;
+        }
+
+        .date {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .detail {
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.6s ease, opacity 0.3s ease;
+        }
+
+        .detail p {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+
+        .btn-more {
+            width: 80px;
+            display: block;
+            background-color: black;
+            border: 1px solid #fff;
+            border-radius: 20px;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            margin-left: auto;
+            padding: 6px 6px;
+            margin-top: 12px;
+            text-decoration: none;
+        }
+
+        .mycard:hover .img {
+            transform: scale(1.2);
+        }
+
+        .mycard:hover .info {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .mycard:hover .detail {
+            max-height: 78px;
+            opacity: 1;
+        }
+
+        .mycard:hover h2.title {
+            color: #ffc107;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #F8F8F8;">
+        <div class="container-fluid" style="margin-left: 30px;">
+            <a class="navbar-brand" href="#">歐洲<span style="color: #5C98F2;">漫步 </span>Euro<span
+                    style="color: #5C98F2;">Go</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container" style="padding-left: 180px;">
+                <div class="collapse navbar-collapse " id="navbarNav">
+                    <div class="d-flex justify-content-center m-4 w-100">
+                        <ul class="navbar-nav">
+                            <li class="nav-item me-4">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item me-4">
+                                <a class="nav-link" href="#">Features</a>
+                            </li>
+                            <li class="nav-item me-4">
+                                <a class="nav-link" href="#">Pricing</a>
+                            </li>
+                            <li class="nav-item me-4">
+                                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                            </li>
+                        </ul>
+                        <div class="ms-auto d-flex justify-content-center align-items-center"
+                            style="padding-right: 200px;">
+                            <a href="#">xxxx</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </nav> -->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #F8F8F8;">
+        <div class="container-fluid" style="margin-left: 30px;">
+
+            <a class="navbar-brand" href="#">歐洲<span style="color: #5C98F2;">漫步 </span>Euro<span
+                    style="color: #5C98F2;">Go</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <div class="mx-auto">
+                        <ul class="navbar-nav">
+                            <li class="nav-item me-4">
+                                <a class="nav-link active" aria-current="page" href="prj_SPA.html">Home</a>
+                            </li>
+                            <li class="nav-item me-4">
+                                <a class="nav-link" href="#s04">Features</a>
+                            </li>
+                            <li class="nav-item me-4">
+                                <a class="nav-link" href="#s05">News</a>
+                            </li>
+                            <li class="nav-item dropdown d-none" id="afterLogin">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    會員專區
+                                </a>
+                                <ul class="dropdown-menu text-center">
+                                    <li><a class="dropdown-item" href="prj_SPA_metro.html">Metro Map</a></li>
+                                    <li><a class="dropdown-item" href="prj_SPA_hotel.html">Hotel Data</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">TBU</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item d-none" id="adminOnly">
+                                <a class="nav-link" href="prj_member_R.html">後臺管理</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a class="" href="prj_member_reglog.html" id="login_before"
+                        style="text-decoration: none; color: rgba(0, 0, 0, 0.7);">
+                        <i class="fa-regular fa-user fa-1x"></i>
+                        登入 / 註冊
+                    </a>
+
+                    <div class="dropdown d-none" id="regular_login_ok">
+                        <a href="" class="dropdown-toggle me-4" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; color: rgba(0, 0, 0, 0.7);">
+                            Hi, <span id="s02_username_text">XXX</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="prj_SPA_account.html">會員資料</a></li>
+                            <li><a class="dropdown-item" href="#">訂單資料</a></li>
+                            <li><a class="dropdown-item" href="#" id="regular_logout_btn">登出</a></li>
+                        </ul>
+                        <!-- <a class="" href="#">
+                            <h5>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </h5>
+                        </a> -->
+                    </div>
+
+                    <div class="dropdown d-none" id="admin_login_ok">
+                        <a href="" class="dropdown-toggle me-4" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; color: rgba(0, 0, 0, 0.7);">
+                            Hi, <span id="s02_adminUserName_text">XXX</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#" id="admin_logout_btn">登出</a></li>
+                        </ul>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- 滑出 Navbar（滾動時顯示） -->
+    <nav class="sticky-navbar" id="stickyNavbar">
+        <div class="container-fluid d-flex align-items-center" style="margin-left: 30px;">
+            <a class="navbar-brand" href="#">歐洲<span style="color: #5C98F2;">漫步 </span>Euro<span
+                    style="color: #5C98F2;">Go</span></a>
+            <div class="container">
+                <div class="d-flex justify-content-center">
+                    <div class="mx-auto d-flex justify-content-center">
+                        <ul class="menu" style="margin-left: 320px;">
+                            <li><a href="prj_SPA.html">Home</a></li>
+                            <li><a href="#s04">Features</a></li>
+                            <li><a href="#s05">News</a></li>
+                            <li class="nav-item dropdown d-none" id="afterLogin_b">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    會員專區
+                                </a>
+                                <ul class="dropdown-menu text-center">
+                                    <li><a class="dropdown-item" href="prj_SPA_metro.html">Metro Map</a></li>
+                                    <li><a class="dropdown-item" href="prj_SPA_hotel.html">Hotel Data</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">TBU</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item d-none" id="adminOnly_b">
+                                <a class="nav-link" href="prj_member_R.html">後臺管理</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <a class="" href="prj_member_reglog.html" id="login_before_b"
+                            style="text-decoration: none; color: rgba(0, 0, 0, 0.7);">
+                            <i class="fa-regular fa-user fa-1x"></i>
+                            登入 / 註冊
+                        </a>
+                    </div>
+
+
+                    <div class="dropdown d-none" id="regular_login_ok_b">
+                        <a href="" class="dropdown-toggle me-4" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; color: rgba(0, 0, 0, 0.7);">
+                            Hi, <span id="s02_username_text_b">XXX</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="prj_SPA_account.html">會員資料</a></li>
+                            <li><a class="dropdown-item" href="#">訂單資料</a></li>
+                            <li><a class="dropdown-item" href="#" id="regular_logout_btn_b">登出</a></li>
+                        </ul>
+                        <!-- <a class="" href="#">
+                            <h5>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </h5>
+                        </a> -->
+                    </div>
+
+                    <div class="dropdown d-none" id="admin_login_ok_b">
+                        <a href="" class="dropdown-toggle me-4" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; color: rgba(0, 0, 0, 0.7);">
+                            Hi, <span id="s02_adminUserName_text_b">XXX</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#" id="admin_logout_btn_b">登出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- Hero 區域 -->
+    <div class="hero">
+        <div class="container">
+            <div class="row d-flex flex-column align-items-start">
+                <div class="col-6">
+                    <div class="text-center rounded-5"
+                        style="width: 200px; height: 35px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); font-size: 24px; color: #59DFBF;">
+                        Book with us!</div>
+                    <h1>Find Next Place</h1>
+                    <h1>To <span style="color: #5C98F2;">Visit</span>
+                    </h1>
+                </div>
+                <div class="col-6">
+                    <h5>
+                        Discover amzaing places at exclusive deals.
+                    </h5>
+                    <h5>
+                        Eat, Shop, Visit interesting places around the world.
+                    </h5>
+                </div>
+            </div>
+            <div class="demo01 mt-3 d-flex" style="border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                <div class="col-9 align-content-center">
+                    <div class="row justify-content-between g-1 p-2  text-center"
+                        style="font-size: 16px; color: #1E1E1E;">
+                        <div class="col-4">
+                            <div class="mb-3">
+                                <label for="keywords" class="form-label">Keywords</label>
+                                <input type="text" id="keywords" class="form-control" placeholder="Type your keywords"
+                                    style="border: none; outline: none;">
+                                <div class="valid-feedback"></div>
+                                <div class="invalid-feedback">尚未輸入</div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mb-3">
+                                <label for="destination" class="form-label">Destination</label>
+                                <select name="destination" id="destination" class="form-select form-select"
+                                    style="border: none; outline: none;">
+                                    <option value="" class="text-center" selected disabled>==請選擇==</option>
+                                    <option value="羅馬">羅馬</option>
+                                </select>
+                                <div class="valid-feedback"></div>
+                                <div class="invalid-feedback">尚未輸入</div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mb-3">
+                                <label for="days" class="form-label">Duration</label>
+                                <select name="days" id="days" class="form-select form-select"
+                                    style="border: none; outline: none;">
+                                    <option value="" class="text-center" selected disabled>==請選擇==</option>
+                                    <option value="羅馬">羅馬</option>
+                                </select>
+                                <div class="valid-feedback"></div>
+                                <div class="invalid-feedback">尚未輸入</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3" style="background-color: #5C98F2; border-radius: 0 15px 15px 0;">
+                    <div class="row flex-column d-flex justify-content-center align-items-center text-center"
+                        style="height: 100%;">
+                        <div class="col-6"><i class="fa-solid fa-magnifying-glass"
+                                style="font-size: 30px; color: #f9f9f9;"></i></div>
+                        <div class="col-6">
+                            <div class="h5" style="color: #f9f9f9;">Search Now</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="box_03_1">
+            <div class="f-carousel" id="myCarousel">
+                <div class="f-carousel__slide border-4" data-thumb-src="https://lipsum.app/id/31/192x144">
+                    <img width="640" alt="" data-lazy-src="https://lipsum.app/id/31/640x700" />
+                </div>
+                <div class="f-carousel__slide" data-thumb-src="https://lipsum.app/id/35/192x144">
+                    <img width="640" alt="" data-lazy-src="https://lipsum.app/id/35/640x700" />
+                </div>
+                <div class="f-carousel__slide" data-thumb-src="https://lipsum.app/id/34/192x144">
+                    <img width="640" alt="" data-lazy-src="https://lipsum.app/id/34/640x700" />
+                </div>
+                <div class="f-carousel__slide" data-thumb-src="https://lipsum.app/id/60/192x144">
+                    <img width="640" alt="" data-lazy-src="https://lipsum.app/id/60/640x700" />
+                </div>
+                <div class="f-carousel__slide" data-thumb-src="https://lipsum.app/id/33/192x144">
+                    <img width="640" alt="" data-lazy-src="https://lipsum.app/id/33/640x700" />
+                </div>
+                <div class="f-carousel__slide" data-thumb-src="https://lipsum.app/id/59/192x144">
+                    <img width="640" alt="" data-lazy-src="https://lipsum.app/id/59/640x700" />
+                </div>
+                <div class="f-carousel__slide" data-thumb-src="https://lipsum.app/id/37/192x144">
+                    <img width="640" alt="" data-lazy-src="https://lipsum.app/id/37/640x700" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <section id="s04" class=" pb-5">
+        <div class="container">
+            <div class="display-1 text-center">Top <span style="color: #5C98F2;">Destinations</span></div>
+            <div class="display-6 text-center">Explore our top destinations voted by more than 100,000+
+                <br>customers around the world.
+            </div>
+            <div class="text-center display-6 custom-link-hover">
+                <a href="prj_SPA_tourlist.html" class="custom-link">
+                    All Destinations
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="row g-1">
+                <div class="col-md-4 text-center my-4">
+                    <div class="mycard" style="box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+                        <a href="#" class="link"></a>
+                        <img src="image/france003.jpg" alt="" class="img">
+                        <div class="info">
+                            <h2 class="title">Paris France</h2>
+                            <div class="date">2022/08/10</div>
+                            <div class="detail">
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and
+                                    Consonantia,…</p>
+                                <a href="#" class="btn-more">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center my-4">
+                    <div class="mycard" style="box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+                        <a href="#" class="link"></a>
+                        <img src="image/france003.jpg" alt="" class="img">
+                        <div class="info">
+                            <h2 class="title">Paris France</h2>
+                            <div class="date">2022/08/10</div>
+                            <div class="detail">
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and
+                                    Consonantia,…</p>
+                                <a href="#" class="btn-more">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center my-4">
+                    <div class="mycard" style="box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+                        <a href="#" class="link"></a>
+                        <img src="image/france003.jpg" alt="" class="img">
+                        <div class="info">
+                            <h2 class="title">Paris France</h2>
+                            <div class="date">2022/08/10</div>
+                            <div class="detail">
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and
+                                    Consonantia,…</p>
+                                <a href="#" class="btn-more">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center my-4">
+                    <div class="mycard" style="box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+                        <a href="#" class="link"></a>
+                        <img src="image/france003.jpg" alt="" class="img">
+                        <div class="info">
+                            <h2 class="title">Paris France</h2>
+                            <div class="date">2022/08/10</div>
+                            <div class="detail">
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and
+                                    Consonantia,…</p>
+                                <a href="#" class="btn-more">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center my-4">
+                    <div class="mycard" style="box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+                        <a href="#" class="link"></a>
+                        <img src="image/france003.jpg" alt="" class="img">
+                        <div class="info">
+                            <h2 class="title">Paris France</h2>
+                            <div class="date">2022/08/10</div>
+                            <div class="detail">
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and
+                                    Consonantia,…</p>
+                                <a href="#" class="btn-more">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center my-4">
+                    <div class="mycard" style="box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+                        <a href="#" class="link"></a>
+                        <img src="image/france003.jpg" alt="" class="img">
+                        <div class="info">
+                            <h2 class="title">Paris France</h2>
+                            <div class="date">2022/08/10</div>
+                            <div class="detail">
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and
+                                    Consonantia,…</p>
+                                <a href="#" class="btn-more">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <div class="site-section block-3" id="s05">
+        <div class="container">
+
+            <div class="mb-5">
+
+                <div class="display-1 text-center">Freshly <span style="color: #5C98F2;">Added</span></div>
+
+            </div>
+            <div class="projects-carousel-wrap">
+                <div class="owl-carousel owl-slide-3">
+                    <div class="project-item">
+                        <div class="project-item-contents">
+                            <a href="#">
+                                <span class="project-item-category">Paris</span>
+                                <h2 class="project-item-title">
+                                    Paris
+                                </h2>
+                            </a>
+                        </div>
+                        <img src="image/france003.jpg" alt="Image" class="">
+                    </div>
+                    <div class="project-item">
+                        <div class="project-item-contents">
+                            <a href="#">
+                                <span class="project-item-category">Paris</span>
+                                <h2 class="project-item-title">
+                                    Paris
+                                </h2>
+                            </a>
+                        </div>
+                        <img src="image/france003.jpg" alt="Image" class="">
+                    </div>
+                    <div class="project-item">
+                        <div class="project-item-contents">
+                            <a href="#">
+                                <span class="project-item-category">Paris</span>
+                                <h2 class="project-item-title">
+                                    Paris
+                                </h2>
+                            </a>
+                        </div>
+                        <img src="image/france003.jpg" alt="Image" class="">
+                    </div>
+                    <div class="project-item">
+                        <div class="project-item-contents">
+                            <a href="#">
+                                <span class="project-item-category">Paris</span>
+                                <h2 class="project-item-title">
+                                    Paris
+                                </h2>
+                            </a>
+                        </div>
+                        <img src="image/france003.jpg" alt="Image" class="">
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-item-contents">
+                            <a href="#">
+                                <span class="project-item-category">Paris</span>
+                                <h2 class="project-item-title">
+                                    Paris
+                                </h2>
+                            </a>
+                        </div>
+                        <img src="image/france003.jpg" alt="Image" class="">
+                    </div>
+                    <div class="project-item">
+                        <div class="project-item-contents">
+                            <a href="#">
+                                <span class="project-item-category">Paris</span>
+                                <h2 class="project-item-title">
+                                    Paris
+                                </h2>
+                            </a>
+                        </div>
+                        <img src="image/france003.jpg" alt="Image" class="">
+                    </div>
+                    <div class="project-item">
+                        <div class="project-item-contents">
+                            <a href="#">
+                                <span class="project-item-category">Paris</span>
+                                <h2 class="project-item-title">
+                                    Paris
+                                </h2>
+                            </a>
+                        </div>
+                        <img src="image/france003.jpg" alt="Image" class="">
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.autoplay.umd.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        $(function () {
+
+            siteCarousel();
+
+
+            let lastScrollY = $(window).scrollTop();
+            const $stickyNavbar = $("#stickyNavbar");
+
+            $(window).on("scroll", function () {
+                let currentScrollY = $(window).scrollTop();
+
+                if (currentScrollY > 100) {
+                    if (currentScrollY > lastScrollY) {
+                        $stickyNavbar.css("top", "0"); // 顯示 Navbar
+                    } else {
+                        $stickyNavbar.css("top", "0"); // 隱藏 Navbar
+                    }
+                } else {
+                    $stickyNavbar.css("top", "-200px"); // 預設隱藏
+                }
+
+                lastScrollY = currentScrollY;
+            });
+
+            new Carousel(document.getElementById("myCarousel"), {
+                // Your custom options
+                Dots: false,
+                Autoplay: {
+                    timeout: 2500,
+                    showProgress: false
+                }
+            }, {
+                Autoplay,
+                // Thumbs
+            });
+
+            //確認uid001是否存在
+            if (getCookie("uid01")) {
+                //將uid01傳遞至後端API執行驗證
+                //input: {"uid01" : "owner01"}
+                console.log(getCookie("level"));
+                var JSONdata = {};
+                JSONdata["uid01"] = getCookie("uid01");
+
+                $.ajax({
+                    type: "POST",
+                    url: "prj_member_control_api.php?action=chkuid",
+                    data: JSON.stringify(JSONdata),
+                    dataType: "json",
+                    success: showdata_checkuid,
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤",
+                            text: "prj_member_control_api.php?action=chkuid",
+                            icon: "error"
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: "請先登入會員",
+                    text: "請先登入會員",
+                    icon: "info",
+                    allowOutsideClick: false
+                });
+            }
+
+            //登出按鈕監聽
+            $("#regular_logout_btn, #admin_logout_btn, #regular_logout_btn_b, #admin_logout_btn_b").click(function () {
+                setCookie("uid01", "", 7);
+                Swal.fire({
+                    title: "已登出成功!!",
+                    icon: "success"
+                }).then((result) => {
+                    location.href = "prj_SPA.html";
+                });
+
+            });
+
+
+
+        });
+
+        //驗證UID01監聽-成功
+        function showdata_checkuid(data) {
+            if (data.state) {
+
+                console.log(data)
+
+                // 登入成功隱藏註冊與登入按鈕
+                $("#login_before").addClass("d-none");
+                $("#login_before_b").addClass("d-none");
+
+                if (data.data.level == 50) {
+                    //管理員登入成功：
+                    $("#adminOnly").removeClass("d-none");
+                    $("#adminOnly_b").removeClass("d-none");
+                    $("#s02_adminUserName_text").text("管理員：" + data.data.username);
+                    $("#s02_adminUserName_text_b").text("管理員：" + data.data.username);
+                    $("#admin_login_ok").removeClass("d-none");
+                    $("#admin_login_ok_b").removeClass("d-none");
+                } else {
+                    //一般會員登入成功：
+                    $("#s02_username_text").text(data.data.username);
+                    $("#s02_username_text_b").text(data.data.username);
+                    $("#regular_login_ok").removeClass("d-none");
+                    $("#regular_login_ok_b").removeClass("d-none");
+                    $("#afterLogin").removeClass("d-none");
+                    $("#afterLogin_b").removeClass("d-none");
+                }
+
+            }
+        }
+
+        //from W3C--讀取cookie
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        //from W3C--寫入cookie
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+
+
+        var siteCarousel = function () {
+
+            if ($('.hero-slide').length > 0) {
+                $('.hero-slide').owlCarousel({
+                    items: 1,
+                    loop: true,
+                    margin: 0,
+                    autoplay: true,
+                    nav: true,
+                    dots: true,
+                    navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
+                    smartSpeed: 1000
+                });
+            }
+
+            if ($('.owl-slide-3').length > 0) {
+                $('.owl-slide-3').owlCarousel({
+                    center: false,
+                    items: 1,
+                    loop: true,
+                    stagePadding: 0,
+                    margin: 30,
+                    autoplay: true,
+                    smartSpeed: 500,
+                    nav: true,
+                    dots: true,
+                    navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
+                    responsive: {
+                        600: {
+                            items: 2
+                        },
+                        1000: {
+                            items: 2
+                        },
+                        1200: {
+                            items: 3
+                        }
+                    }
+                });
+            }
+
+            if ($('.owl-slide').length > 0) {
+                $('.owl-slide').owlCarousel({
+                    center: false,
+                    items: 2,
+                    loop: true,
+                    stagePadding: 0,
+                    margin: 30,
+                    autoplay: true,
+                    nav: true,
+                    navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
+                    responsive: {
+                        600: {
+
+                            nav: true,
+                            items: 2
+                        },
+                        1000: {
+
+                            stagePadding: 0,
+                            nav: true,
+                            items: 2
+                        },
+                        1200: {
+
+                            stagePadding: 0,
+                            nav: true,
+                            items: 2
+                        }
+                    }
+                });
+            }
+
+
+            if ($('.nonloop-block-14').length > 0) {
+                $('.nonloop-block-14').owlCarousel({
+                    center: false,
+                    items: 1,
+                    loop: true,
+                    stagePadding: 0,
+                    margin: 0,
+                    autoplay: true,
+                    nav: true,
+                    navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
+                    responsive: {
+                        600: {
+                            margin: 20,
+                            nav: true,
+                            items: 2
+                        },
+                        1000: {
+                            margin: 30,
+                            stagePadding: 0,
+                            nav: true,
+                            items: 2
+                        },
+                        1200: {
+                            margin: 30,
+                            stagePadding: 0,
+                            nav: true,
+                            items: 3
+                        }
+                    }
+                });
+            }
+
+            $('.slide-one-item').owlCarousel({
+                center: false,
+                items: 1,
+                loop: true,
+                stagePadding: 0,
+                margin: 0,
+                autoplay: true,
+                pauseOnHover: false,
+                nav: true,
+                navText: ['<span class="icon-keyboard_arrow_left">', '<span class="icon-keyboard_arrow_right">']
+            });
+        };
+    </script>
+
+</body>
+
+</html>

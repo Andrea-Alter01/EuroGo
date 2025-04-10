@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>「歐洲漫步」EuroGo</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.autoplay.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style_test.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+
+    <style>
+        /* 全局樣式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            /* height: 2000px; */
+            /* 增加滾動距離 */
+        }
+
+        /* 滑出 Navbar（滾動時出現） */
+        .sticky-navbar {
+            position: fixed;
+            top: -200px;
+            /* 預設隱藏 */
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            /* 背景顏色 */
+            padding: 30px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: rgba(0, 0, 0, 0.55);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: top 0.4s ease-in-out;
+            z-index: 100;
+        }
+
+        .sticky-navbar .logo {
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.55);
+        }
+
+        .sticky-navbar .menu {
+            display: flex;
+            justify-content: center;
+            /* 水平置中 */
+            align-items: center;
+            /* 垂直置中 */
+            list-style: none;
+            /* 去除預設的列表樣式 */
+            margin: 0 auto;
+            /* 將 ul 推到中間 */
+            padding: 0;
+            /* 移除預設的 padding */
+            width: fit-content;
+            /* 讓 ul 依照內容自動調整寬度 */
+        }
+
+        .sticky-navbar .d-flex {
+            display: flex;
+            justify-content: center;
+            /* 使 .d-flex 容器內的內容置中 */
+            align-items: center;
+            width: 100%;
+            /* 確保父容器寬度占滿整個區域 */
+        }
+
+        .sticky-navbar .menu li {
+            margin: 0 15px;
+        }
+
+        .sticky-navbar .menu a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.55);
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .sticky-navbar .menu a:hover {
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Hero 區域 */
+        .hero {
+            height: 30vh;
+            background: url('image/bgc.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8C8C9B;
+            font-size: 36px;
+            font-weight: bold;
+            position: relative;
+        }
+
+
+        .hero h1 {
+            font-family: "DM Serif Text", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 80px;
+            color: #1E1E1E;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #F8F8F8;">
+        <div class="container-fluid" style="margin-left: 30px;">
+
+            <a class="navbar-brand" href="#">歐洲<span style="color: #5C98F2;">漫步 </span>Euro<span
+                    style="color: #5C98F2;">Go</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <div class="mx-auto">
+                        <ul class="navbar-nav">
+                            <li class="nav-item me-4">
+                                <a class="nav-link active" aria-current="page" href="prj_SPA.html">Home</a>
+                            </li>
+                            <li class="nav-item me-4">
+                                <a class="nav-link" href="#s04">Features</a>
+                            </li>
+                            <li class="nav-item me-4">
+                                <a class="nav-link" href="#s05">News</a>
+                            </li>
+                            <li class="nav-item dropdown d-none" id="afterLogin">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    會員專區
+                                </a>
+                                <ul class="dropdown-menu text-center">
+                                    <li><a class="dropdown-item" href="prj_SPA_metro.html">Metro Map</a></li>
+                                    <li><a class="dropdown-item" href="prj_SPA_hotel.html">Hotel Data</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">TBU</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item d-none" id="adminOnly">
+                                <a class="nav-link" href="prj_member_R.html">後臺管理</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a class="" href="prj_member_reglog.html" id="login_before"
+                        style="text-decoration: none; color: rgba(0, 0, 0, 0.7);">
+                        <i class="fa-regular fa-user fa-1x"></i>
+                        登入 / 註冊
+                    </a>
+
+                    <div class="dropdown d-none" id="regular_login_ok">
+                        <a href="" class="dropdown-toggle me-4" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; color: rgba(0, 0, 0, 0.7);">
+                            Hi, <span id="s02_username_text">XXX</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="prj_SPA_account.html">會員資料</a></li>
+                            <li><a class="dropdown-item" href="#">訂單資料</a></li>
+                            <li><a class="dropdown-item" href="#" id="regular_logout_btn">登出</a></li>
+                        </ul>
+                        <!-- <a class="" href="#">
+                            <h5>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </h5>
+                        </a> -->
+                    </div>
+
+                    <div class="dropdown d-none" id="admin_login_ok">
+                        <a href="" class="dropdown-toggle me-4" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; color: rgba(0, 0, 0, 0.7);">
+                            Hi, <span id="s02_adminUserName_text">XXX</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#" id="admin_logout_btn">登出</a></li>
+                        </ul>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- 滑出 Navbar（滾動時顯示） -->
+    <nav class="sticky-navbar" id="stickyNavbar">
+        <div class="container-fluid d-flex align-items-center" style="margin-left: 30px;">
+            <a class="navbar-brand" href="#">歐洲<span style="color: #5C98F2;">漫步 </span>Euro<span
+                    style="color: #5C98F2;">Go</span></a>
+            <div class="container">
+                <div class="d-flex justify-content-center">
+                    <div class="mx-auto d-flex justify-content-center">
+                        <ul class="menu" style="margin-left: 320px;">
+                            <li><a href="prj_SPA.html">Home</a></li>
+                            <li><a href="#s04">Features</a></li>
+                            <li><a href="#s05">News</a></li>
+                            <li class="nav-item dropdown d-none" id="afterLogin_b">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    會員專區
+                                </a>
+                                <ul class="dropdown-menu text-center">
+                                    <li><a class="dropdown-item" href="prj_SPA_metro.html">Metro Map</a></li>
+                                    <li><a class="dropdown-item" href="prj_SPA_hotel.html">Hotel Data</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">TBU</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item d-none" id="adminOnly_b">
+                                <a class="nav-link" href="prj_member_R.html">後臺管理</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <a class="" href="prj_member_reglog.html" id="login_before_b"
+                            style="text-decoration: none; color: rgba(0, 0, 0, 0.7);">
+                            <i class="fa-regular fa-user fa-1x"></i>
+                            登入 / 註冊
+                        </a>
+                    </div>
+
+
+                    <div class="dropdown d-none" id="regular_login_ok_b">
+                        <a href="" class="dropdown-toggle me-4" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; color: rgba(0, 0, 0, 0.7);">
+                            Hi, <span id="s02_username_text_b">XXX</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="prj_SPA_account.html">會員資料</a></li>
+                            <li><a class="dropdown-item" href="#">訂單資料</a></li>
+                            <li><a class="dropdown-item" href="#" id="regular_logout_btn_b">登出</a></li>
+                        </ul>
+                        <!-- <a class="" href="#">
+                            <h5>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </h5>
+                        </a> -->
+                    </div>
+
+                    <div class="dropdown d-none" id="admin_login_ok_b">
+                        <a href="" class="dropdown-toggle me-4" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; color: rgba(0, 0, 0, 0.7);">
+                            Hi, <span id="s02_adminUserName_text_b">XXX</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#" id="admin_logout_btn_b">登出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- Hero 區域 -->
+    <div class="hero">
+        <h1>Tour List</h1>
+    </div>
+
+    <section id="s02" class="pt-5">
+
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 g-4 mb-5" id="tour_data">
+                <div class="col" >
+                    <div class="card" >
+                        <img src="image/italy001.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">米蘭時尚與藝術之旅</h5>
+                            <p class="card-text">
+                            <h6>義大利-威尼斯 6 日遊 </h6>
+                            <button type="button" class="btn btn-danger"> 下單 </button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="image/italy001.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">米蘭時尚與藝術之旅</h5>
+                            <p class="card-text">
+                            <h6>義大利-威尼斯 6 日遊 </h6>
+                            <button type="button" class="btn btn-danger"> 下單 </button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.autoplay.umd.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        $(function () {
+
+
+
+
+            let lastScrollY = $(window).scrollTop();
+            const $stickyNavbar = $("#stickyNavbar");
+
+            $(window).on("scroll", function () {
+                let currentScrollY = $(window).scrollTop();
+
+                if (currentScrollY > 100) {
+                    if (currentScrollY > lastScrollY) {
+                        $stickyNavbar.css("top", "0"); // 顯示 Navbar
+                    } else {
+                        $stickyNavbar.css("top", "0"); // 隱藏 Navbar
+                    }
+                } else {
+                    $stickyNavbar.css("top", "-200px"); // 預設隱藏
+                }
+
+                lastScrollY = currentScrollY;
+            });
+
+
+            $.ajax({
+                type: "GET",
+                url: `prj_tour_pack_control_api.php?action=getalldata`,
+                dataType: "json",
+                async: false,
+                success: showdata,
+                error: function () {
+                    Swal.fire({
+                        title: "API介接錯誤",
+                        text: "prj_tour_pack_control_api.php?action=getalldata",
+                        icon: "error"
+                    });
+                }
+            });
+
+            //確認uid001是否存在
+            if (getCookie("uid01")) {
+                //將uid01傳遞至後端API執行驗證
+                //input: {"uid01" : "owner01"}
+                console.log(getCookie("level"));
+                var JSONdata = {};
+                JSONdata["uid01"] = getCookie("uid01");
+
+                $.ajax({
+                    type: "POST",
+                    url: "prj_member_control_api.php?action=chkuid",
+                    data: JSON.stringify(JSONdata),
+                    dataType: "json",
+                    success: showdata_checkuid,
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤",
+                            text: "prj_member_control_api.php?action=chkuid",
+                            icon: "error"
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: "請先登入會員",
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    allowOutsideClick: false
+                }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                        location.href = "prj_SPA.html"
+                    }
+                });
+            }
+
+             //登出按鈕監聽
+             $("#regular_logout_btn, #admin_logout_btn, #regular_logout_btn_b, #admin_logout_btn_b").click(function () {
+                setCookie("uid01", "", 7);
+                Swal.fire({
+                    title: "已登出成功!!",
+                    icon: "success"
+                }).then((result) => {
+                    location.href = "prj_SPA.html";
+                });
+
+            });
+
+
+
+        });
+
+        //驗證UID01監聽-成功
+        function showdata_checkuid(data) {
+            if (data.state) {
+
+                console.log(data)
+
+                // 登入成功隱藏註冊與登入按鈕
+                $("#login_before").addClass("d-none");
+                $("#login_before_b").addClass("d-none");
+
+                if (data.data.level == 50) {
+                    //管理員登入成功：
+                    $("#adminOnly").removeClass("d-none");
+                    $("#adminOnly_b").removeClass("d-none");
+                    $("#s02_adminUserName_text").text("管理員：" + data.data.username);
+                    $("#s02_adminUserName_text_b").text("管理員：" + data.data.username);
+                    $("#admin_login_ok").removeClass("d-none");
+                    $("#admin_login_ok_b").removeClass("d-none");
+                } else {
+                    //一般會員登入成功：
+                    $("#s02_username_text").text(data.data.username);
+                    $("#s02_username_text_b").text(data.data.username);
+                    $("#regular_login_ok").removeClass("d-none");
+                    $("#regular_login_ok_b").removeClass("d-none");
+                    $("#afterLogin").removeClass("d-none");
+                    $("#afterLogin_b").removeClass("d-none");
+                }
+
+            }
+        }
+
+        //from W3C--讀取cookie
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        //from W3C--寫入cookie
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function showdata(data) {
+            console.log(data);
+            if (data.state) {
+                $("#tour_data").empty();
+                data.data.forEach(function (item) {
+                    var citySecondText = item.city_second ? ` - ${item.city_second}` : '';
+                    var strHTML = `<div class="col" >
+                                    <div class="card h-100" >
+                                        <img src="upload/${item.photo_first}" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${item.title}</h5>
+                                            <p class="card-text">
+                                                <h6>${item.country}-${item.city_first}${citySecondText} ${item.duration} 日遊 </h6>
+                                                <button type="button" class="btn btn-danger"> 下單 </button>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    </div>`;
+                    $("#tour_data").append(strHTML);
+                });
+            } else {
+                Swal.fire({
+                    title: data.message,
+                    text: "無資料",
+                    icon: "error"
+                });
+            }
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

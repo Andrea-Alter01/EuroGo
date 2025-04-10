@@ -1,0 +1,28 @@
+[
+    
+      {
+        "city": "Madrid",
+        "stations": [
+          {"name": "Sol", "latitude": 40.4168, "longitude": -3.7038, "average_daily_passengers": {"Monday": 50000, "Tuesday": 48000, "Wednesday": 47000, "Thursday": 49000, "Friday": 55000, "Saturday": 60000, "Sunday": 62000}, "peak_hours": {"morning": "07:30-09:30", "evening": "17:30-19:30"}, "off_peak_hours": "10:00-16:30"},
+          {"name": "Gran Via", "latitude": 40.4204, "longitude": -3.7038, "average_daily_passengers": {"Monday": 42000, "Tuesday": 40000, "Wednesday": 39000, "Thursday": 41000, "Friday": 46000, "Saturday": 51000, "Sunday": 53000}, "peak_hours": {"morning": "07:30-09:30", "evening": "17:30-19:30"}, "off_peak_hours": "10:00-16:30"},
+          {"name": "Atocha", "latitude": 40.4076, "longitude": -3.6919, "average_daily_passengers": {"Monday": 53000, "Tuesday": 51000, "Wednesday": 50000, "Thursday": 52000, "Friday": 57000, "Saturday": 62000, "Sunday": 64000}, "peak_hours": {"morning": "07:30-09:30", "evening": "17:30-19:30"}, "off_peak_hours": "10:00-16:30"}
+        ]
+      },
+      {
+        "city": "Barcelona",
+        "stations": [
+          {"name": "Catalunya", "latitude": 41.3870, "longitude": 2.1701, "average_daily_passengers": {"Monday": 48000, "Tuesday": 46000, "Wednesday": 45000, "Thursday": 47000, "Friday": 52000, "Saturday": 57000, "Sunday": 59000}, "peak_hours": {"morning": "07:30-09:30", "evening": "17:30-19:30"}, "off_peak_hours": "10:00-16:30"},
+          {"name": "Passeig de Gracia", "latitude": 41.3917, "longitude": 2.1650, "average_daily_passengers": {"Monday": 44000, "Tuesday": 42000, "Wednesday": 41000, "Thursday": 43000, "Friday": 48000, "Saturday": 53000, "Sunday": 55000}, "peak_hours": {"morning": "07:30-09:30", "evening": "17:30-19:30"}, "off_peak_hours": "10:00-16:30"},
+          {"name": "Sagrada Familia", "latitude": 41.4036, "longitude": 2.1744, "average_daily_passengers": {"Monday": 51000, "Tuesday": 49000, "Wednesday": 48000, "Thursday": 50000, "Friday": 55000, "Saturday": 60000, "Sunday": 62000}, "peak_hours": {"morning": "07:30-09:30", "evening": "17:30-19:30"}, "off_peak_hours": "10:00-16:30"}
+        ]
+      },
+      {
+        "city": "Seville",
+        "stations": [
+          {"name": "Puerta Jerez", "latitude": 37.3827, "longitude": -5.9953, "average_daily_passengers": {"Monday": 28000, "Tuesday": 27000, "Wednesday": 26000, "Thursday": 27500, "Friday": 31000, "Saturday": 35000, "Sunday": 37000}, "peak_hours": {"morning": "07:30-09:30", "evening": "17:30-19:30"}, "off_peak_hours": "10:00-16:30"},
+          {"name": "San Bernardo", "latitude": 37.3777, "longitude": -5.9839, "average_daily_passengers": {"Monday": 26000, "Tuesday": 25000, "Wednesday": 24000, "Thursday": 25500, "Friday": 29000, "Saturday": 33000, "Sunday": 35000}, "peak_hours": {"morning": "07:30-09:30", "evening": "17:30-19:30"}, "off_peak_hours": "10:00-16:30"}
+        ]
+      }
+    
+]
+  

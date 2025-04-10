@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>「歐洲漫步」EuroGo - 會員資料</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/practice.css"> -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/practice.css">
+
+
+    <link rel="stylesheet" href="css/style_test.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+
+    <style>
+        .dropdown-toggle::after {
+            display: none !important;
+        }
+
+
+        .header_info {
+            font-size: 14px;
+            color: #969696;
+        }
+
+        .header_info a {
+            font-size: 16px;
+            letter-spacing: .05rem;
+            /* padding: 20px 20px; */
+            color: rgba(255, 255, 255, 0.5);
+            display: inline-block;
+            text-decoration: none !important;
+        }
+
+        .header_info a:hover {
+            color: #fff;
+        }
+
+        .password input::placeholder {
+            color: rgba(0, 0, 0, 1)
+        }
+
+        /* 改變按鈕顏色 */
+        .navbar-toggler {
+
+            border: none;
+            /* 移除邊框 */
+            padding: 10px;
+            /* 改變內邊距 */
+        }
+
+        /* 滑鼠懸停時變化 */
+        .navbar-toggler:hover {
+            background-color: #858383;
+            /* 鼠標懸停時背景顏色 */
+        }
+
+        /* 清除點擊後的邊框 */
+        .navbar-toggler:focus {
+            outline: none;
+            /* 移除邊框 */
+            box-shadow: none;
+            /* 移除陰影 */
+        }
+
+        .hero-slide .owl-dots {
+            display: none;
+        }
+
+        .photo {
+            position: relative;
+            overflow: hidden;
+            background-image: url(image/mountain001.jpg);
+            height: 200px;
+            width: 200px;
+        }
+
+        .photo .h4 {
+            position: absolute;
+            /* background-color: #996c6c33; */
+            /* margin-top: 80%; */
+            background-image: linear-gradient(90deg, #996c6c59, #ffffffa6);
+            width: 100%;
+            height: 100%;
+            top: 100%;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+        }
+
+        .photo:hover .h4 {
+            top: 80%;
+            transition: top 0.8s;
+        }
+
+        .photo .h4 a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <!-- section 01 -->
+    <!-- <section id="s01" class="bg-light py-1">
+        <div class="container">
+            <div class="text-end">
+                <a href="#" style="text-decoration: none;">
+                    <i class="fa-brands fa-square-facebook text-primary"></i>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <i class="fa-brands fa-square-x-twitter text-dark"></i>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <i class="fa-brands fa-square-instagram text-danger"></i>
+                </a>
+            </div>
+
+
+        </div>
+    </section> -->
+
+
+
+    <div class="site-navbar py-2 js-sticky-header site-navbar-target pl-0 ">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <div class="ms-auto d-block bg-cover"
+                    style="background-image: url(image/logo.png); height: 50px; width: 50px;"></div>
+                <span class="text-white">「歐洲漫步」EuroGo</span>
+                <div class="mx-auto">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+                        <ul class="site-menu main-menu js-clone-nav mr-auto pl-0">
+                            <!-- <li class="active"> -->
+                            <li>
+                                <a href="prj_SPA.html" class="nav-link text-left">Home</a>
+                            </li>
+                            <li class="nav-item dropdown d-none" id="afterLogin">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    會員專區
+                                </a>
+                                <ul class="dropdown-menu text-center">
+                                    <li><a class="dropdown-item" href="prj_SPA_metro.html">Metro Map</a></li>
+                                    <li><a class="dropdown-item" href="prj_SPA_hotel.html">Hotel Data</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">TBU</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header_info">
+
+                    <a class="" href="prj_member_reglog.html" id="login_before">
+                        <i class="fa-regular fa-user fa-1x"></i>
+                        登入 / 註冊
+                    </a>
+
+                    <div class="dropdown d-none" id="login_ok">
+                        <a href="" class="dropdown-toggle me-4" data-bs-toggle="dropdown" aria-expanded="false">
+                            Hi, <span id="s02_username_text">XXX</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="prj_SPA_account.html">會員資料</a></li>
+                            <li><a class="dropdown-item" href="#">訂單資料</a></li>
+                            <li><a class="dropdown-item" href="#" id="s02_logout_btn">登出</a></li>
+                        </ul>
+                        <!-- <a class="" href="#">
+                            <h5>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </h5>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="collapse d-lg-none" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4 text-center">
+            <div class="m-auto d-block bg-cover"
+                style="background-image: url(image/logo.png); height: 200px; width: 200px;"></div>
+            <h5 class="text-white h4">
+                <a class="navbar-brand" href="#">
+                    「歐洲漫步」EuroGo
+                </a>
+            </h5>
+
+            <span class="text-muted ">XXXXXXXXXXX</span>
+            <div class="d-flex align-items-center">
+                <div class="mx-auto">
+                    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">TBU</a>
+                            </li>
+                            <li class="nav-item dropdown d-none" id="afterLogin_b">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    會員專區
+                                </a>
+                                <ul class="dropdown-menu text-center">
+                                    <li><a class="dropdown-item" href="prj_SPA_metro.html">Metro Map</a></li>
+                                    <li><a class="dropdown-item" href="prj_SPA_hotel.html">Hotel Data</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">TBU</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="header_info">
+
+                <a class="" href="prj_member_reglog.html" id="login_before_b">
+                    <i class="fa-regular fa-user fa-1x"></i>
+                    登入 / 註冊
+                </a>
+
+                <div class="dropdown d-none" id="login_ok_b">
+                    <a href="" class="dropdown-toggle me-4" data-bs-toggle="dropdown" aria-expanded="false">
+                        Hi, <span id="s02_username_text_b">XXX</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="prj_SPA_account.html">會員資料</a></li>
+                        <li><a class="dropdown-item" href="#">訂單資料</a></li>
+                        <li><a class="dropdown-item" href="#" id="s02_logout_btn_b">登出</a></li>
+                    </ul>
+                    <!-- <a class="" href="#">
+                        <h5>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </h5>
+                    </a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+
+
+
+
+    <div class="hero-slide owl-carousel site-blocks-cover" style="margin-top: 0px;">
+        <div class="intro-section-non-home bg-cover" style="background-image: url(image/portugal002.jpg);">
+            <div class="container">
+                <div class="row align-items-center animate__animated animate__fadeInUp animate__slower">
+                    <div
+                        class="col-lg-7 justify-content-center mx-auto text-center animate__animated animate__fadeIn animate__slower">
+                        <h1>「波爾圖之美：杜羅河畔的色彩與傳統」</h1>
+                        <h1>Porto’s Beauty: Colors & Tradition Along the Douro River</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="intro-section-non-home bg-cover" style="background-image: url(image/italy001.jpg);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 justify-content-center mx-auto text-center">
+                        <span class="d-block"></span>
+                        <h1>「探索古羅馬：鬥獸場的壯麗風華」</h1>
+                        <h1>Explore Ancient Rome: The Majestic Colosseum</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="intro-section-non-home bg-cover" style="background-image: url(image/france001.jpg);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 justify-content-center mx-auto text-center">
+                        <span class="d-block"></span>
+                        <h1>「浪漫巴黎：在艾菲爾鐵塔下邂逅夢想」</h1>
+                        <h1>Romantic Paris: A Dream Beneath the Eiffel Tower</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="intro-section-non-home bg-cover" style="background-image: url(image/spain001.jpg);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 justify-content-center mx-auto text-center">
+                        <span class="d-block"></span>
+                        <h1>「高第之城：巴塞隆納的藝術奇蹟」</h1>
+                        <h1>Gaudí’s City: The Artistic Wonders of Barcelona</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="intro-section-non-home bg-cover" style="background-image: url(image/portugal001.jpg);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 justify-content-center mx-auto text-center">
+                        <span class="d-block"></span>
+                        <h1>「里斯本風情：貝倫塔的歷史與浪漫」</h1>
+                        <h1>Lisbon Charm: The History & Romance of Belém Tower</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="intro-section-non-home bg-cover" style="background-image: url(image/italy002.jpg);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 justify-content-center mx-auto text-center">
+                        <span class="d-block"></span>
+                        <h1>「五漁村奇景：地中海上的彩色童話」</h1>
+                        <h1>Cinque Terre Magic: A Colorful Fairytale by the Sea</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- END slider -->
+
+    <div class="container-fluid">
+        <div class="row vh-100 ">
+            <div class="col-md-2 border border-3 border-success p-3 m-3">
+                <div class="list-group text-center">
+                    <button type="button" class="list-group-item list-group-item-action active" aria-current="true"
+                        id="button1">
+                        會員資料
+
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action" id="button2">訂單資料</button>
+                </div>
+            </div>
+
+            <div class="col-md-8 p-3 m-3">
+                <div id="tabs_1">
+                    <ul>
+                        <li><a href="#tabs-1">帳號與密碼</a></li>
+                        <li><a href="#tabs-2">基本資料</a></li>
+                        <li><a href="#tabs-3">會員等級</a></li>
+                    </ul>
+                    <div id="tabs-1">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">會員帳號</label>
+                            <input type="text" name="username" id="username" class="form-control form-control-lg"
+                                disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">會員密碼</label>
+                            <input type="password" name="password" id="password" class="form-control form-control-lg"
+                                placeholder="*****">
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback">不符合規則</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">會員Email</label>
+                            <input type="text" name="email" id="email" class="form-control form-control-lg"
+                                placeholder="請依EMAIL格式輸入(如:xxx@example.com)">
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback" id="email-invalid-feedback">尚未輸入或不符合規則</div>
+                        </div>
+                    </div>
+                    <div id="tabs-2">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="full_name" class="form-label">姓名：</label>
+                                    <input type="text" name="full_name" id="full_name"
+                                        class="form-control form-control-lg" list="full_name_list"
+                                        placeholder="請輸入您的姓名">
+                                    <datalist id="full_name_list">
+                                        <option value="王曉明">王曉明</option>
+                                        <option value="李雅婷">李雅婷</option>
+                                        <option value="陳彥博">陳彥博</option>
+                                        <option value="張欣怡">張欣怡</option>
+                                        <option value="劉承翰">劉承翰</option>
+                                    </datalist>
+                                    <div class="valid-feedback"></div>
+                                    <div class="invalid-feedback">尚未輸入</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="birthdatepicker" class="form-label">會員生日</label>
+                                    <input type="text" id="birthdatepicker" class="form-control"
+                                        placeholder="請輸入年/月/日或點選">
+                                    <div class="valid-feedback"></div>
+                                    <div class="invalid-feedback">不符合規則</div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="photo bg-cover border border-1 border-dark rounded-5 shadow-lg"
+                                    id="member_photo">
+                                    <input type="hidden" id="member_photo_check">
+                                    <div class="h4 text-center text-white" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        <label for="" type="button">會員頭照</label>
+                                    </div>
+                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">更新會員頭照</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="mb-3">
+                                                            <label for="member_photo" class="form-label">會員頭照</label>
+                                                            <input type="file" class="form-control form-control-lg"
+                                                                id="fileupload">
+                                                            <div class="valid-feedback">上傳格式為jpeg or png!</div>
+                                                            <div class="invalid-feedback">上傳格式錯誤!</div>
+                                                            <a href="" data-lightbox="photo" id="photo-lightbox">
+                                                                <img src="" alt="" class="img-fluid w-25 mt-3 d-none"
+                                                                    id="prveImg">
+                                                            </a>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">取消</button>
+                                                    <button type="button" class="btn btn-primary" id="cfm_member_photo"
+                                                        data-bs-dismiss="modal">確認</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address" class="form-label">地址：</label>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <select name="address_city" id="address_city"
+                                        class="form-select form-select text-center">
+                                        <option value="" selected disabled>----選擇縣市----</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <select name="address_area" id="address_area"
+                                        class="form-select form-select text-center">
+                                        <option value="" selected disabled>----選擇鄉鎮區名稱----</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control mt-2" list="address_list" placeholder="請輸入地址"
+                                name="address" id="address">
+                            <datalist id="address_list">
+                                <option value="工業區一路100號">工業區一路100號</option>
+                                <option value="忠孝東路一段100號">忠孝東路一段100號</option>
+                                <option value="台灣大道三段200號">台灣大道三段200號</option>
+                                <option value="中山二路300號">中山二路300號</option>
+                                <option value="文化路一段150號">文化路一段150號</option>
+                            </datalist>
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback">尚未輸入</div>
+                        </div>
+
+                    </div>
+                    <div id="tabs-3">
+                        <div class="mb-3 col-5">
+                            <label for="membership" class="form-label">會員等級</label>
+                            <input type="text" name="membership" id="membership"
+                                class="form-control form-control-lg" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div id="tabs_2" class="d-none">
+                    <ul>
+                        <li><a href="#tabs-1">XXXX</a></li>
+                        <li><a href="#tabs-2">XXX</a></li>
+                        <li><a href="#tabs-3">XXXXX</a></li>
+                    </ul>
+                    <div id="tabs-1">
+
+                    </div>
+                    <div id="tabs-2">
+
+                    </div>
+                    <div id="tabs-3">
+
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-lg w-50" style="background-color: #A89361;"
+                        id="register_ok_btn">更新</button>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+
+
+    <script>
+
+        var allCityData; //所有的縣市資料
+        var selectedCity;
+        var showimg;
+        var photo;
+        var userId;
+
+        var flag_password = false;
+        var flag_email = false;
+        var flag_address_city = false;
+        var flag_address_area = false;
+        var flag_address = false;
+        var flag_full_name = false;
+        var flag_birthdatepicker = false;
+        var flag_photo = false;
+
+        $(function () { //begin of main function
+
+            $("#tabs_1").tabs({
+                activate: function (event, ui) {
+                    let activeTabId = ui.newPanel.attr('id'); // 取得當前選中的 tab ID
+                    if (activeTabId === "tabs-1" || activeTabId === "tabs-2") {
+                        $("#register_ok_btn").show();
+                    } else {
+                        $("#register_ok_btn").hide();
+                    }
+                }
+            });
+            $("#tabs_2").tabs();
+            siteCarousel();
+            siteSticky();
+            siteScroll();
+
+            $("#password").on("click", function () {
+                $(this).val(""); // 清空輸入框的值
+                $(this).attr("placeholder", "請輸入更新的密碼"); // 清空輸入框的值
+            });
+
+            $("#password").on("focusout", function () {
+                if ($(this).val() == "") {
+                    $(this).attr("placeholder", "****"); // 清空輸入框的值
+                }
+
+            });
+
+
+            $("#birthdatepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                dateFormat: "yy-mm-dd",
+                yearRange: "1960:2025",
+
+            });
+
+            // 渲染縣市資料
+            $.ajax({
+                type: "GET",
+                url: "js/CityCountyData.json",
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    allCityData = data;
+
+                    //產生縣市選單
+                    $("#address_city").empty();
+                    $("#address_city").append(`<option value="" selected disabled>---選擇縣市---</option>`);
+                    allCityData.forEach(function (item) {
+                        var strHTML = `<option value="${item.CityName}">${item.CityName}</option>`;
+                        $("#address_city").append(strHTML);
+                    });
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "API介接錯誤",
+                        text: "js/CityCountyData.json",
+                        icon: "error"
+                    });
+                }
+            });
+
+            //監聽縣市選單，渲染鄉鎮區選單
+            $("#address_city").change(function () {
+                selectedCity = $(this).val();
+
+                if (selectedCity != "") {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    $("#address_area").removeClass("is-valid");
+                    $("#address_area").addClass("is-invalid");
+                    flag_address_city = true;
+                    flag_address_area = false;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_address_city = false;
+                }
+
+                //過濾所選取的縣市名稱，並找出該鄉鎮區的資料
+                allCityData.forEach(function (item) {
+                    if (item.CityName == selectedCity) {
+                        //產生鄉鎮區選單
+                        $("#address_area").empty();
+                        $("#address_area").append(`<option value="" selected disabled>---選擇鄉鎮區名稱---</option>`);
+                        item.AreaList.forEach(function (myitem) {
+                            var strHTML = `<option value="${myitem.AreaName}">${myitem.AreaName}</option>`;
+                            $("#address_area").append(strHTML);
+                        });
+                    }
+                });
+            });
+
+            //即時監聽 email
+            $("#email").bind("input propertychange", function () {
+
+                const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                console.log(pattern.test($(this).val()));
+
+                if (pattern.test($(this).val())) {
+                    $("#email").removeClass("is-invalid");
+                    $("#email").addClass("is-valid");
+                    flag_email = true;
+
+                } else {
+                    $("#email").removeClass("is-valid");
+                    $("#email").addClass("is-invalid");
+                    $("#email-invalid-feedback").text("請依下列格式輸入您的電子郵件：user@example.com");
+                    flag_email = false;
+                }
+            });
+
+            //監聽姓名
+            $("#full_name").bind("input propertychange", function () {
+                if ($(this).val() != "") {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_full_name = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_full_name = false;
+                }
+            });
+
+            //監聽鄉鎮區選單
+            $("#address_area").change(function () {
+                if ($(this).val() != "") {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_address_area = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_address_area = false;
+                }
+            });
+
+            //監聽地址
+            $("#address").bind("input propertychange", function () {
+                if ($(this).length > 0) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_address = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_address = false;
+                }
+            });
+
+
+
+            //即時監聽 birthdate
+            $("#birthdatepicker").change(function () {
+
+                const pattern = /^(19|20)\d{2}[-/](0[1-9]|1[0-2])[-/](0[1-9]|[12][0-9]|3[01])$/;
+                console.log(pattern.test($(this).val()));
+
+                date = $(this).val();
+                year = date.substring(0, 4);
+                month = date.substring(5, 7);
+                day = date.substring(8, 10);
+                if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                    maxFebraryDays = 29;
+                } else {
+                    maxFebraryDays = 28;
+                }
+
+                if (pattern.test($(this).val())) {
+                    if (month != 2) {
+                        $("#birthdatepicker").removeClass("is-invalid");
+                        $("#birthdatepicker").addClass("is-valid");
+                        flag_birthdatepicker = true;
+                    } else if (month == 2 && day <= maxFebraryDays) {
+                        $("#birthdatepicker").removeClass("is-invalid");
+                        $("#birthdatepicker").addClass("is-valid");
+                        flag_birthdatepicker = true;
+                    } else {
+                        $("#birthdatepicker").removeClass("is-valid");
+                        $("#birthdatepicker").addClass("is-invalid");
+                        flag_birthdatepicker = false;
+                    }
+
+                } else {
+
+                    $("#birthdatepicker").removeClass("is-valid");
+                    $("#birthdatepicker").addClass("is-invalid");
+                    flag_birthdatepicker = false;
+
+                }
+            });
+
+
+            // 監聽輪播投影片切换
+            $(".hero-slide").on('changed.owl.carousel', function (event) {
+                // 移除所有的動畫效果，以便重新觸發動畫
+                $('.intro-section-non-home .container').removeClass('animate__animated animate__fadeInUp animate__slower');
+
+                // 延遲一段時間後, 重新啟動動畫效果
+                setTimeout(function () {
+                    // 重新给每個 h1 元素添加動畫效果
+                    $('.intro-section-non-home .container').each(function (index) {
+                        $(this).addClass('animate__animated animate__fadeInUp animate__slow');
+                    });
+                }, 100);  // 延遲時間，確保切换動畫的平順
+            });
+
+            $("#cfm_member_photo").click(function () {
+                $("#member_photo").css("background-image", `url(${photo})`);
+                $("#member_photo_check").val(showimg);
+
+            });
+
+            // 選擇上傳的圖片
+            $("#fileupload").change(function () {
+                console.log(fileupload);
+                console.log(fileupload.files[0]);
+                console.log(fileupload.files[0].type);
+
+                if (fileupload.files[0].type == "image/jpeg" || fileupload.files[0].type == "image/png") {
+                    console.log(URL.createObjectURL(fileupload.files[0]));
+                    $("#prveImg").removeClass("d-none");
+                    $("#prveImg").attr("src", URL.createObjectURL(fileupload.files[0]));
+                    photo = URL.createObjectURL(fileupload.files[0]);
+
+                    $("#photo-lightbox").attr("href", URL.createObjectURL(fileupload.files[0]));
+                    showimg = fileupload.files[0].name;
+                    console.log(showimg);
+
+                    //顯示feedback
+                    $("#fileupload").removeClass("is-invalid");
+                    $("#fileupload").addClass("is-valid");
+
+                    flag_upload = true;
+                } else {
+                    //顯示feedback
+                    $("#fileupload").removeClass("is-valid");
+                    $("#fileupload").addClass("is-invalid");
+                    $("#prveImg").addClass("d-none");
+
+                    flag_upload = false;
+
+                    //alert("只支援jpeg or png!");
+                }
+            });
+
+
+
+            //確認uid001是否存在
+            if (getCookie("uid01")) {
+                //將uid01傳遞至後端API執行驗證
+                //input: {"uid01" : "owner01"}
+                console.log(getCookie("level"));
+                var JSONdata = {};
+                JSONdata["uid01"] = getCookie("uid01");
+
+                $.ajax({
+                    type: "POST",
+                    url: "prj_member_control_api.php?action=chkuid",
+                    data: JSON.stringify(JSONdata),
+                    dataType: "json",
+                    success: showdata_checkuid,
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤",
+                            text: "prj_member_control_api.php?action=chkuid",
+                            icon: "error"
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: "請先登入會員",
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    allowOutsideClick: false
+                }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                        location.href = "prj_SPA.html"
+                    }
+                });
+            }
+
+            //登出按鈕監聽
+            $("#regular_logout_btn, #admin_logout_btn, #regular_logout_btn_b, #admin_logout_btn_b").click(function () {
+                setCookie("uid01", "", 7);
+                Swal.fire({
+                    title: "已登出成功!!",
+                    icon: "success"
+                }).then((result) => {
+                    location.href = "prj_SPA.html";
+                });
+
+            });
+
+            $("#button1").click(function () {
+                $("#tabs_1").addClass("d-block");
+                $("#tabs_1").removeClass("d-none");
+                $("#tabs_2").removeClass("d-block");
+                $("#tabs_2").addClass("d-none");
+                $("#register_ok_btn").removeClass("d-none");
+
+            });
+            $("#button2").click(function () {
+                $("#tabs_2").addClass("d-block");
+                $("#tabs_2").removeClass("d-none");
+                $("#tabs_1").removeClass("d-block");
+                $("#tabs_1").addClass("d-none");
+                $("#register_ok_btn").addClass("d-none");
+
+            });
+
+            $(".list-group-item").each(function () {
+                $(this).on("click", function () {
+                    $(".list-group-item").removeClass("active"); // 移除所有按鈕的 active
+                    $(this).addClass("active"); // 只為點擊的按鈕添加 active
+                });
+            });
+
+            $("#register_ok_btn").click(function () {
+                // if (flag_password || flag_email || flag_address_city || flag_address_area || flag_full_name || flag_birthdatepicker || flag_photo) {
+                //     var JSONdata = {};
+                //     JSONdata["id"] = userId;
+                //     JSONdata["email"] = $("#email").val();
+                //     JSONdata["password"] = $("#password").val();
+                //     //JSONdata["photo"] = showimg;
+                //     JSONdata["city"] = $("#address_city").val();
+                //     JSONdata["area"] = $("#address_area").val();
+                //     JSONdata["address"] = $("#address").val();
+                //     JSONdata["full_name"] = $("#full_name").val();
+                //     JSONdata["birthDate"] = $("#birthdatepicker").val();
+                //     console.log(JSON.stringify(JSONdata));
+
+                //     // $.ajax({
+                //     //     type: "POST",
+                //     //     url: "250109-U.php",
+                //     //     data: JSON.stringify(JSONdata),
+                //     //     dataType: "json",
+                //     //     success: showdata_updata,
+                //     //     error: function () {
+                //     //         alert("error-250109-U.php");
+                //     //     }
+
+                //     // });
+
+                // } else {
+                //     Swal.fire({
+                //         title: "無資料被更新",
+                //         text: "prj_member_control_api.php?action=chkuid",
+                //         icon: "error"
+                //     });
+                // }
+
+                var JSONdata = {};
+                JSONdata["id"] = userId; // 確保 ID 被傳遞
+
+                // 定義欄位對應
+                var fields = {
+                    "email": "#email",
+                    "password": "#password",
+                    "city": "#address_city",
+                    "area": "#address_area",
+                    "address": "#address",
+                    "full_name": "#full_name",
+                    "birthDate": "#birthdatepicker"
+                    //"photo": "#member_photo_check"
+                };
+
+                var hasUpdate = false; // 標記是否有變更
+
+                $.each(fields, function (key, selector) {
+                    var $field = $(selector);
+                    var originalValue = $field.attr("data-original") || ""; // 取得原始值
+                    var currentValue = $field.val() || ""; // 取得當前值
+
+                    if (originalValue !== currentValue) {
+                        JSONdata[key] = currentValue; // 只加入變更的欄位
+                        hasUpdate = true;
+                    }
+                });
+
+                console.log(hasUpdate);
+                console.log(JSON.stringify(JSONdata));
+
+                // ✅ 檢查圖片是否有變更
+                var originalPhoto = $("#member_photo_check").attr("data-original") || ""; // 從 data-original 取得舊圖片名稱
+                var newPhoto = $("#member_photo_check").val() || ""; // 假設圖片上傳後，名稱存入 data-new-photo
+
+                if (newPhoto && newPhoto !== originalPhoto) {
+                    JSONdata["photo"] = newPhoto;
+                    JSONdata["delete_old_photo"] = originalPhoto; // 傳舊圖名稱讓後端刪除
+                    hasUpdate = true;
+                }
+
+                if (hasUpdate) {
+                    console.log(JSON.stringify(JSONdata));
+
+                    $.ajax({
+                        type: "POST",
+                        url: "prj_member_control_api.php?action=update",
+                        data: JSON.stringify(JSONdata),
+                        dataType: "json",
+                        success: function (data) {
+                            Swal.fire({
+                                title: "更新資料成功",
+                                //text: "已登出成功!!",
+                                icon: "success"
+                            }).then((result) => {
+                                location.href = "prj_SPA_account.html";
+                            });
+                        },
+                        error: function () {
+                            alert("error-prj_member_control_api.php?action=update");
+                        }
+                    });
+
+                } else {
+                    Swal.fire({
+                        title: "無資料被更新",
+                        text: "prj_member_control_api.php?action=chkuid",
+                        icon: "error"
+                    });
+                }
+
+                if (showimg != "") {
+                    if (flag_upload) {
+                        console.log("可上傳至後端!");
+                        //*************************
+                        //傳遞至資料後端api
+                        var formData = new FormData();
+                        formData.append("file", fileupload.files[0]);
+                        console.log(formData);
+
+                        $.ajax({
+                            type: "POST",
+                            url: "prj_member_control_api.php?action=upload",
+                            data: formData,
+                            dataType: "json",
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            success: function (data) {
+                                console.log(data);
+                            },
+                            error: function () {
+                                console.log("error-prj_member_control_api.php?action=upload");
+                            }
+                        });
+
+                    } else {
+                        console.log("格式錯誤不可以上傳至後端!");
+                        alert("格式錯誤不可以上傳至後端!");
+                    }
+                }
+
+            });
+
+
+
+
+
+        });  //end of main function
+
+        //驗證UID01監聽-成功
+        function showdata_checkuid(data) {
+            if (data.state && data.data.level != 50) {
+
+                console.log(data)
+
+                //隱藏註冊與登入按鈕
+                $("#login_before").addClass("d-none");
+                $("#login_before_b").addClass("d-none");
+
+                //顯示歡迎使用者
+                $("#s02_username_text").text(data.data.username);
+                $("#s02_username_text_b").text(data.data.username);
+
+                //登入成功
+                $("#login_ok").removeClass("d-none");
+                $("#login_ok_b").removeClass("d-none");
+                $("#afterLogin").removeClass("d-none");
+                $("#afterLogin_b").removeClass("d-none");
+
+
+                $("#username").val(data.data.username);
+                $("#membership").val(data.data.membershipType);
+
+                $("#email").val(data.data.email).attr("data-original", data.data.email);
+                $("#birthdatepicker").val(data.data.birthDate).attr("data-original", data.data.birthDate);
+                $("#member_photo_check").val(data.data.photo).attr("data-original", data.data.photo);
+
+                if (data.data.photo) {
+                    $("#member_photo").css("background-image", `url(/web1/upload/${$("#member_photo_check").val()})`);
+                } else {
+                    $("#member_photo").css("background-image", `url(/web1/image/mountain001.jpg)`);
+                }
+
+
+
+                userId = data.data.id;
+
+
+                if (data.data.full_name) {
+                    $("#full_name").val(data.data.full_name).attr("data-original", data.data.full_name);
+                    $("#full_name").removeClass("is-invalid");
+                } else {
+                    $("#full_name").removeClass("is-valid");
+                    $("#full_name").addClass("is-invalid");
+                }
+
+                if (data.data.city) {
+                    $("#address_city").val(data.data.city).attr("data-original", data.data.city);
+                    $("#address_city").removeClass("is-invalid");
+                } else {
+                    $("#address_city").removeClass("is-valid");
+                    $("#address_city").addClass("is-invalid");
+                }
+
+                if (data.data.area) {
+                    $("#address_area").append(`<option value="${data.data.area}">${data.data.area}</option>`);
+                    $("#address_area").val(data.data.area).attr("data-original", data.data.area);
+                    $("#address_area").removeClass("is-invalid");
+                } else {
+                    $("#address_area").removeClass("is-valid");
+                    $("#address_area").addClass("is-invalid");
+                }
+
+                if (data.data.address) {
+                    $("#address").val(data.data.address).attr("data-original", data.data.address);
+                    $("#address").removeClass("is-invalid");
+                } else {
+                    $("#address").removeClass("is-valid");
+                    $("#address").addClass("is-invalid");
+                }
+
+            } else {
+                location.href = "prj_SPA.html";
+            }
+        }
+
+        //from W3C--讀取cookie
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        //from W3C--寫入cookie
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        var siteCarousel = function () {
+
+            if ($('.hero-slide').length > 0) {
+                $('.hero-slide').owlCarousel({
+                    items: 1,
+                    loop: true,
+                    margin: 0,
+                    autoplay: true,
+                    nav: true,
+                    dots: true,
+                    navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
+                    smartSpeed: 1000
+                });
+            }
+
+            if ($('.owl-slide-3').length > 0) {
+                $('.owl-slide-3').owlCarousel({
+                    center: false,
+                    items: 1,
+                    loop: true,
+                    stagePadding: 0,
+                    margin: 30,
+                    autoplay: true,
+                    smartSpeed: 500,
+                    nav: true,
+                    dots: true,
+                    navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
+                    responsive: {
+                        600: {
+                            items: 2
+                        },
+                        1000: {
+                            items: 2
+                        },
+                        1200: {
+                            items: 3
+                        }
+                    }
+                });
+            }
+
+            if ($('.owl-slide').length > 0) {
+                $('.owl-slide').owlCarousel({
+                    center: false,
+                    items: 2,
+                    loop: true,
+                    stagePadding: 0,
+                    margin: 30,
+                    autoplay: true,
+                    nav: true,
+                    navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
+                    responsive: {
+                        600: {
+
+                            nav: true,
+                            items: 2
+                        },
+                        1000: {
+
+                            stagePadding: 0,
+                            nav: true,
+                            items: 2
+                        },
+                        1200: {
+
+                            stagePadding: 0,
+                            nav: true,
+                            items: 2
+                        }
+                    }
+                });
+            }
+
+
+            if ($('.nonloop-block-14').length > 0) {
+                $('.nonloop-block-14').owlCarousel({
+                    center: false,
+                    items: 1,
+                    loop: true,
+                    stagePadding: 0,
+                    margin: 0,
+                    autoplay: true,
+                    nav: true,
+                    navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
+                    responsive: {
+                        600: {
+                            margin: 20,
+                            nav: true,
+                            items: 2
+                        },
+                        1000: {
+                            margin: 30,
+                            stagePadding: 0,
+                            nav: true,
+                            items: 2
+                        },
+                        1200: {
+                            margin: 30,
+                            stagePadding: 0,
+                            nav: true,
+                            items: 3
+                        }
+                    }
+                });
+            }
+
+            $('.slide-one-item').owlCarousel({
+                center: false,
+                items: 1,
+                loop: true,
+                stagePadding: 0,
+                margin: 0,
+                autoplay: true,
+                pauseOnHover: false,
+                nav: true,
+                navText: ['<span class="icon-keyboard_arrow_left">', '<span class="icon-keyboard_arrow_right">']
+            });
+        };
+
+        var siteSticky = function () {
+            $(".js-sticky-header").sticky({ topSpacing: 0 });
+        };
+
+        var siteScroll = function () {
+
+
+
+            $(window).scroll(function () {
+
+                var st = $(this).scrollTop();
+
+                if (st > 100) {
+                    $('.js-sticky-header').addClass('shrink');
+                } else {
+                    $('.js-sticky-header').removeClass('shrink');
+                }
+
+            })
+
+        };
+
+        function getFormattedTimestamp() {
+            var now = new Date();
+
+            var year = now.getFullYear();
+            var month = String(now.getMonth() + 1).padStart(2, "0"); // 月份從 0 開始
+            var day = String(now.getDate()).padStart(2, "0");
+            var hours = String(now.getHours()).padStart(2, "0");
+            var minutes = String(now.getMinutes()).padStart(2, "0");
+            var seconds = String(now.getSeconds()).padStart(2, "0");
+
+            return year + month + day + hours + minutes + seconds + "_";
+        }
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

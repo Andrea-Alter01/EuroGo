@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>「歐洲漫步」EuroGo</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="css/MarkerCluster.css">
+
+
+    <style>
+        /* 全局樣式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            /* height: 2000px; */
+            /* 增加滾動距離 */
+        }
+
+        /* 滑出 Navbar（滾動時出現） */
+        .sticky-navbar {
+            position: fixed;
+            top: -200px;
+            /* 預設隱藏 */
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            /* 背景顏色 */
+            padding: 30px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: rgba(0, 0, 0, 0.55);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: top 0.4s ease-in-out;
+            z-index: 100;
+        }
+
+        .sticky-navbar .logo {
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.55);
+        }
+
+        .sticky-navbar .menu {
+            display: flex;
+            justify-content: center;
+            /* 水平置中 */
+            align-items: center;
+            /* 垂直置中 */
+            list-style: none;
+            /* 去除預設的列表樣式 */
+            margin: 0 auto;
+            /* 將 ul 推到中間 */
+            padding: 0;
+            /* 移除預設的 padding */
+            width: fit-content;
+            /* 讓 ul 依照內容自動調整寬度 */
+        }
+
+        .sticky-navbar .d-flex {
+            display: flex;
+            justify-content: center;
+            /* 使 .d-flex 容器內的內容置中 */
+            align-items: center;
+            width: 100%;
+            /* 確保父容器寬度占滿整個區域 */
+        }
+
+        .sticky-navbar .menu li {
+            margin: 0 15px;
+        }
+
+        .sticky-navbar .menu a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.55);
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .sticky-navbar .menu a:hover {
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Hero 區域 */
+        .hero {
+            height: 30vh;
+            background: url('image/bgc.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8C8C9B;
+            font-size: 36px;
+            font-weight: bold;
+            position: relative;
+        }
+
+
+        .hero h1 {
+            font-family: "DM Serif Text", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 80px;
+            color: #1E1E1E;
+            z-index: 2;
+        }
+
+        .marker-cluster-medium div {
+            background-color: rgba(58, 73, 207, 0.5);
+        }
+
+        .marker-cluster-small div {
+            background-color: rgba(207, 58, 170, 0.5);
+            border-radius: 50%;
+        }
+
+        .marker-cluster div {
+            color: aliceblue;
+            width: 60px;
+            height: 60px;
+            margin-left: 5px;
+            margin-top: 5px;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        .marker-cluster span {
+            line-height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #F8F8F8;">
+        <div class="container-fluid" style="margin-left: 30px;">
+
+            <a class="navbar-brand" href="#">歐洲<span style="color: #5C98F2;">漫步 </span>Euro<span
+                    style="color: #5C98F2;">Go</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <div class="mx-auto">
+                        <ul class="navbar-nav">
+                            <li class="nav-item me-4">
+                                <a class="nav-link active" aria-current="page" href="prj_SPA.html">Home</a>
+                            </li>
+                            <li class="nav-item me-4">
+                                <a class="nav-link" href="#s04">Features</a>
+                            </li>
+                            <li class="nav-item me-4">
+                                <a class="nav-link" href="#s05">News</a>
+                            </li>
+                            <li class="nav-item dropdown d-none" id="afterLogin">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    會員專區
+                                </a>
+                                <ul class="dropdown-menu text-center">
+                                    <li><a class="dropdown-item" href="prj_SPA_metro.html">Metro Map</a></li>
+                                    <li><a class="dropdown-item" href="prj_SPA_hotel.html">Hotel Data</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">TBU</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item d-none" id="adminOnly">
+                                <a class="nav-link" href="prj_member_R.html">後臺管理</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a class="" href="prj_member_reglog.html" id="login_before"
+                        style="text-decoration: none; color: rgba(0, 0, 0, 0.7);">
+                        <i class="fa-regular fa-user fa-1x"></i>
+                        登入 / 註冊
+                    </a>
+
+                    <div class="dropdown d-none" id="regular_login_ok">
+                        <a href="" class="dropdown-toggle me-4" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="text-decoration: none; color: rgba(0, 0, 0, 0.7);">
+                            Hi, <span id="s02_username_text">XXX</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="prj_SPA_account.html">會員資料</a></li>
+                            <li><a class="dropdown-item" href="#">訂單資料</a></li>
+                            <li><a class="dropdown-item" href="#" id="regular_logout_btn">登出</a></li>
+                        </ul>
+                        <!-- <a class="" href="#">
+                            <h5>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </h5>
+                        </a> -->
+                    </div>
+
+                    <div class="dropdown d-none" id="admin_login_ok">
+                        <a href="" class="dropdown-toggle me-4" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="text-decoration: none; color: rgba(0, 0, 0, 0.7);">
+                            Hi, <span id="s02_adminUserName_text">XXX</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#" id="admin_logout_btn">登出</a></li>
+                        </ul>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- 滑出 Navbar（滾動時顯示） -->
+    <nav class="sticky-navbar" id="stickyNavbar">
+        <div class="container-fluid d-flex align-items-center" style="margin-left: 30px;">
+            <a class="navbar-brand" href="#">歐洲<span style="color: #5C98F2;">漫步 </span>Euro<span
+                    style="color: #5C98F2;">Go</span></a>
+            <div class="container">
+                <div class="d-flex justify-content-center">
+                    <div class="mx-auto d-flex justify-content-center">
+                        <ul class="menu" style="margin-left: 320px;">
+                            <li><a href="prj_SPA.html">Home</a></li>
+                            <li><a href="#s04">Features</a></li>
+                            <li><a href="#s05">News</a></li>
+                            <li class="nav-item dropdown d-none" id="afterLogin_b">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    會員專區
+                                </a>
+                                <ul class="dropdown-menu text-center">
+                                    <li><a class="dropdown-item" href="prj_SPA_metro.html">Metro Map</a></li>
+                                    <li><a class="dropdown-item" href="prj_SPA_hotel.html">Hotel Data</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">TBU</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item d-none" id="adminOnly_b">
+                                <a class="nav-link" href="prj_member_R.html">後臺管理</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <a class="" href="prj_member_reglog.html" id="login_before_b"
+                            style="text-decoration: none; color: rgba(0, 0, 0, 0.7);">
+                            <i class="fa-regular fa-user fa-1x"></i>
+                            登入 / 註冊
+                        </a>
+                    </div>
+
+
+                    <div class="dropdown d-none" id="regular_login_ok_b">
+                        <a href="" class="dropdown-toggle me-4" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="text-decoration: none; color: rgba(0, 0, 0, 0.7);">
+                            Hi, <span id="s02_username_text_b">XXX</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="prj_SPA_account.html">會員資料</a></li>
+                            <li><a class="dropdown-item" href="#">訂單資料</a></li>
+                            <li><a class="dropdown-item" href="#" id="regular_logout_btn_b">登出</a></li>
+                        </ul>
+                        <!-- <a class="" href="#">
+                            <h5>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </h5>
+                        </a> -->
+                    </div>
+
+                    <div class="dropdown d-none" id="admin_login_ok_b">
+                        <a href="" class="dropdown-toggle me-4" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="text-decoration: none; color: rgba(0, 0, 0, 0.7);">
+                            Hi, <span id="s02_adminUserName_text_b">XXX</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#" id="admin_logout_btn_b">登出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- Hero 區域 -->
+    <div class="hero">
+        <h1>Metro Map</h1>
+    </div>
+
+    <section id="s02" class="pt-5">
+
+        <div class="container-fluid">
+            <div class="row vh-100">
+                <div class="col-md-4">
+                    <select name="myarea" id="myarea" class="form-select form-select-lg mt-3">
+                        <option value="" selected disabled>---選擇行政區名稱---</option>
+                        <option value="南屯區">南屯區</option>
+                        <option value="北屯區">北屯區</option>
+                        <option value="西屯區">西屯區</option>
+                    </select>
+                    <ul class="list-group mt-3" id="mylist" style="height: 80vh; overflow: scroll;">
+                        <li class="list-group-item">
+                            <p class="h3 fw-900 text-danger">場站名稱</p>
+                            <p class="h5 fw-900">地址：XXXXXXXXX</p>
+                            <p class="h5 fw-900">更新時間：XXXXXXXX</p>
+                            <p class="h5 fw-900">總停車格： <span class="h4 fw-900 text-success">99</span>輛</p>
+                            <p class="h5 fw-900">目前車輛數量：<span class="h4 fw-900 text-warning">111</span>輛</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-8">
+                    <div id="map" class="vh-100"></div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="js/leaflet.markercluster.js"></script>
+    <script src="js/leaflet-color-markers.js"></script>
+
+    <script>
+        var allCityData; //所有的縣市資料
+        var youbikeData; //台中Youbike資料
+
+        var selectedArea;
+
+        var map;
+        var markers;
+        var clickMarkers;
+
+        var timeSplit;
+
+        var count = 0;
+
+        $(function () {
+
+            let lastScrollY = $(window).scrollTop();
+            const $stickyNavbar = $("#stickyNavbar");
+
+            $(window).on("scroll", function () {
+                let currentScrollY = $(window).scrollTop();
+
+                if (currentScrollY > 100) {
+                    if (currentScrollY > lastScrollY) {
+                        $stickyNavbar.css("top", "0"); // 顯示 Navbar
+                    } else {
+                        $stickyNavbar.css("top", "0"); // 隱藏 Navbar
+                    }
+                } else {
+                    $stickyNavbar.css("top", "-200px"); // 預設隱藏
+                }
+
+                lastScrollY = currentScrollY;
+            });
+
+            //draw map
+            map = L.map('map').setView([24.1705909, 120.6099507], 13);
+
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            markers = new L.markerClusterGroup().addTo(map);
+
+            // var popup = `<img src="image/mountain002.jpg" class="img-fluid">`;
+            // L.marker([24.1705909, 120.6099507]).addTo(map)
+            //     .bindPopup(popup)
+            //.openPopup();
+
+
+            //台中Youbike資料
+            $.ajax({
+                type: "GET",
+                //url: "https://datacenter.taichung.gov.tw/swagger/OpenData/34a848ab-eeb3-44fd-a842-a09cb3209a7d",
+                url: "js/metro.json",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    youbikeData = data.retVal;
+                    console.log(youbikeData);
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "API介接錯誤",
+                        text: "js/points.json",
+                        icon: "error"
+                    });
+                }
+            });
+
+            //縣市資料
+            $.ajax({
+                type: "GET",
+                url: "js/CityCountyData.json",
+                async: false,
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    allCityData = data;
+                    console.log(allCityData);
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "API介接錯誤",
+                        text: "js/CityCountyData.json",
+                        icon: "error"
+                    });
+                }
+            });
+
+            //找出台中市鄉鎮區的資料
+            allCityData.forEach(function (item) {
+                if (item.CityName == "臺中市") {
+                    //產生鄉鎮區選單
+                    $("#myarea").empty();
+                    $("#myarea").append(`<option value="" selected disabled>---選擇鄉鎮區名稱---</option>`);
+                    item.AreaList.forEach(function (myitem) {
+                        var strHTML = `<option value="${myitem.AreaName}">${myitem.AreaName}</option>`;
+                        $("#myarea").append(strHTML);
+                    });
+                }
+            });
+
+            //監聽鄉鎮區選單
+            $("#myarea").change(function () {
+                // 抹除地圖上所有的marker
+                removeMarker();
+
+                selectedArea = $(this).val();
+
+                //過濾健保局 - 藥局資料
+                $("#mylist").empty();
+                var counter = 0;
+                youbikeData.forEach(function (item) {
+                    if (item.sarea == selectedArea) {
+                        counter++;
+                        if (counter == 1) {
+                            map.panTo([item.lat, item.lng]);
+                        }
+                        console.log(item);
+                        timeSplit = splitTime(item.mday);
+                        console.log(timeSplit);
+                        var strHTML = `<li class="list-group-item" data-name="${item.sna}" data-address="${item.ar}" data-update="${timeSplit}" data-total="${item.tot}" data-now="${item.sbi}" data-lat="${item.lat}" data-lng="${item.lng}">
+                        <p class="h3 fw-900 text-danger">${item.sna}</p>
+                        <p class="h5 fw-900">地址：${item.ar}</p>
+                        <p class="h5 fw-900">更新時間：${timeSplit}</p>
+                        <p class="h5 fw-900">總停車格： <span class="h4 fw-900 text-success">${item.tot}</span>輛</p>
+                        <p class="h5 fw-900">目前車輛數量：<span class="h4 fw-900 text-warning">${item.sbi}</span>輛</p>
+                    </li>`;
+                        $("#mylist").append(strHTML);
+
+                        //產生marker
+                        var popupHTML = `<div class="card">
+                                            <div class="card-hearder h2 h2 fw-900 text-bg-success">台中YouBike站資訊</div>
+                                            <div class="card-body">
+                                                <p class="h3 fw-900 text-danger">${item.sna}</p>
+                                                <p class="h5 fw-900">地址：${item.ar}</p>
+                                                <p class="h5 fw-900">更新時間：${timeSplit}</p>
+                                                <p class="h5 fw-900">總停車格： <span class="h4 fw-900 text-success">${item.tot}</span>輛</p>
+                                                <p class="h5 fw-900">目前車輛數量：<span class="h4 fw-900 text-warning">${item.sbi}</span>輛</p>
+                                            </div>
+                                        </div>`;
+                        // L.marker([item.geometry.coordinates[1], item.geometry.coordinates[0]]).addTo(map)
+                        //     .bindPopup(popupHTML);
+                        markers.addLayer(L.marker([item.lat, item.lng], { icon: bikeIcon }).bindPopup(popupHTML))
+                    }
+                });
+
+                //監聽list-group-item
+                $("#mylist .list-group-item").click(function () {
+                    console.log($(this).data("name"));
+                    console.log($(this).data("address"));
+                    console.log($(this).data("update"));
+                    console.log($(this).data("total"));
+                    console.log($(this).data("now"));
+                    console.log($(this).data("lat"));
+                    console.log($(this).data("lng"));
+
+                    markerPopup($(this).data("name"), $(this).data("address"), $(this).data("update"), $(this).data("total"), $(this).data("now"), $(this).data("lat"), $(this).data("lng"));
+                    count = 1;
+
+                });
+
+            });
+
+
+
+            //確認uid001是否存在
+            if (getCookie("uid01")) {
+                //將uid01傳遞至後端API執行驗證
+                //input: {"uid01" : "owner01"}
+                console.log(getCookie("level"));
+                var JSONdata = {};
+                JSONdata["uid01"] = getCookie("uid01");
+
+                $.ajax({
+                    type: "POST",
+                    url: "prj_member_control_api.php?action=chkuid",
+                    data: JSON.stringify(JSONdata),
+                    dataType: "json",
+                    success: showdata_checkuid,
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤",
+                            text: "prj_member_control_api.php?action=chkuid",
+                            icon: "error"
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: "請先登入會員",
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    allowOutsideClick: false
+                }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                        location.href = "prj_SPA.html"
+                    }
+                });
+            }
+
+            //登出按鈕監聽
+            $("#s02_logout_btn, #s02_logout_btn_b").click(function () {
+                setCookie("uid01", "", 7);
+                Swal.fire({
+                    title: "已登出成功!!",
+                    icon: "success"
+                }).then((result) => {
+                    location.href = "prj_SPA.html";
+                });
+
+            });
+
+
+
+        });
+
+        // // 抹除地圖上所有的marker
+        // function removeMarker() {
+        //     map.eachLayer(function (layer) {
+        //         if (layer instanceof L.Marker) {
+        //             map.removeLayer(layer);
+        //         }
+        //     });
+        // }
+
+        // use cluster 抹除地圖上所有的marker
+        function removeMarker() {
+            markers.eachLayer(function (layer) {
+                if (layer instanceof L.Marker) {
+                    markers.removeLayer(layer);
+                }
+            });
+        }
+
+        // use cluster 抹除地圖上所有的marker
+        function removeClickMarker() {
+            clickMarkers.eachLayer(function (layer) {
+                if (layer instanceof L.Marker) {
+                    clickMarkers.removeLayer(layer);
+                }
+            });
+        }
+
+        //產生marker
+        function markerPopup(name, address, update, total, now, lat, lng) {
+            if (count != 0) {
+                clickMarkers.remove();
+                count = 0;
+            }
+            var popupHTML = `<div class="card">
+                                            <div class="card-hearder h2 h2 fw-900 text-bg-success">台中YouBike站資訊</div>
+                                            <div class="card-body">
+                                                <p class="h3 fw-900 text-danger">${name}</p>
+                                                <p class="h5 fw-900">地址：${address}</p>
+                                                <p class="h5 fw-900">更新時間：${update}</p>
+                                                <p class="h5 fw-900">總停車格： <span class="h4 fw-900 text-success">${total}</span>輛</p>
+                                                <p class="h5 fw-900">目前車輛數量：<span class="h4 fw-900 text-warning">${now}</span>輛</p>
+                                            </div>
+                                        </div>`;
+            clickMarkers = L.marker([lat, lng], { icon: bikeIcon }).addTo(map).bindPopup(popupHTML).openPopup()
+            //markers.addLayer(L.marker([lat, lng], { icon: bikeIcon }).bindPopup(popupHTML))
+        }
+
+        //驗證UID01監聽-成功
+        function showdata_checkuid(data) {
+            if (data.state) {
+
+                console.log(data)
+
+                // 登入成功隱藏註冊與登入按鈕
+                $("#login_before").addClass("d-none");
+                $("#login_before_b").addClass("d-none");
+
+                if (data.data.level == 50) {
+                    //管理員登入成功：
+                    $("#adminOnly").removeClass("d-none");
+                    $("#adminOnly_b").removeClass("d-none");
+                    $("#s02_adminUserName_text").text("管理員：" + data.data.username);
+                    $("#s02_adminUserName_text_b").text("管理員：" + data.data.username);
+                    $("#admin_login_ok").removeClass("d-none");
+                    $("#admin_login_ok_b").removeClass("d-none");
+                } else {
+                    //一般會員登入成功：
+                    $("#s02_username_text").text(data.data.username);
+                    $("#s02_username_text_b").text(data.data.username);
+                    $("#regular_login_ok").removeClass("d-none");
+                    $("#regular_login_ok_b").removeClass("d-none");
+                    $("#afterLogin").removeClass("d-none");
+                    $("#afterLogin_b").removeClass("d-none");
+                }
+
+            }
+        }
+
+        //from W3C--讀取cookie
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        //from W3C--寫入cookie
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function splitTime(time) {
+            let datetimeStr = time;
+
+            // Use substring to extract the different parts
+            let year = datetimeStr.substring(0, 4);
+            let month = datetimeStr.substring(4, 6);
+            let day = datetimeStr.substring(6, 8);
+            let hour = datetimeStr.substring(8, 10);
+            let minute = datetimeStr.substring(10, 12);
+            let second = datetimeStr.substring(12, 14);
+
+            //console.log(year, month, day, hour, minute, second);
+            return year + "/" + month + "/" + day + " " + hour + ":" + minute + ":" + second;
+        }
+
+    </script>
+
+</body>
+
+</html>

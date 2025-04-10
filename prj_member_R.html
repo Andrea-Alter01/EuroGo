@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員資料</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css"
+        integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous">
+    <!--end::Third Party Plugin(Bootstrap Icons)-->
+    <link rel="stylesheet" href="css/adminlte.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+
+    <style>
+        .page-btn {
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            margin: 2px;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .page-btn.active {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .dots {
+            padding: 5px 10px;
+            margin: 2px;
+            color: gray;
+        }
+
+        table tbody tr:hover td {
+            background-color: #f0f0f0;
+            /* 灰色背景 */
+            transition: background-color 0.3s ease-in-out;
+            /* 平滑過渡效果 */
+        }
+
+        .photo {
+            position: relative;
+            overflow: hidden;
+            background-image: url(image/mountain001.jpg);
+            height: 200px;
+            width: 200px;
+        }
+
+        .photo .h4 {
+            position: absolute;
+            /* background-color: #996c6c33; */
+            /* margin-top: 80%; */
+            background-image: linear-gradient(90deg, #996c6c59, #ffffffa6);
+            width: 100%;
+            height: 100%;
+            top: 100%;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+        }
+
+        .photo:hover .h4 {
+            top: 80%;
+            transition: top 0.8s;
+        }
+
+        .photo .h4 a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+
+    <div class="app-wrapper"> <!--begin::Header-->
+        <nav class="app-header navbar navbar-expand bg-body"> <!--begin::Container-->
+            <div class="container-fluid"> <!--begin::Start Navbar Links-->
+                <ul class="navbar-nav">
+                    <li class="nav-item"> <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button"> <i
+                                class="bi bi-list"></i> </a> </li>
+                                <li class="nav-item d-none d-md-block"> <a href="prj_SPA.html" class="nav-link">Home</a> </li>
+                    <li class="nav-item d-none d-md-block"> <a href="#" class="nav-link">Contact</a> </li>
+                </ul> <!--end::Start Navbar Links--> <!--begin::End Navbar Links-->
+                <ul class="navbar-nav ms-auto"> <!--begin::Navbar Search-->
+                    <li class="nav-item"> <a class="nav-link" data-widget="navbar-search" href="#" role="button"> <i
+                                class="bi bi-search"></i> </a> </li> <!--end::Navbar Search-->
+                    <!--begin::Messages Dropdown Menu-->
+                    <li class="nav-item dropdown"> <a class="nav-link" data-bs-toggle="dropdown" href="#"> <i
+                                class="bi bi-chat-text"></i> <span class="navbar-badge badge text-bg-danger">3</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end"> <a href="#"
+                                class="dropdown-item"> <!--begin::Message-->
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"> <img src="../../dist/assets/img/user1-128x128.jpg"
+                                            alt="User Avatar" class="img-size-50 rounded-circle me-3"> </div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="dropdown-item-title">
+                                            Brad Diesel
+                                            <span class="float-end fs-7 text-danger"><i
+                                                    class="bi bi-star-fill"></i></span>
+                                        </h3>
+                                        <p class="fs-7">Call me whenever you can...</p>
+                                        <p class="fs-7 text-secondary"> <i class="bi bi-clock-fill me-1"></i> 4 Hours
+                                            Ago
+                                        </p>
+                                    </div>
+                                </div> <!--end::Message-->
+                            </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item">
+                                <!--begin::Message-->
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"> <img src="../../dist/assets/img/user8-128x128.jpg"
+                                            alt="User Avatar" class="img-size-50 rounded-circle me-3"> </div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="dropdown-item-title">
+                                            John Pierce
+                                            <span class="float-end fs-7 text-secondary"> <i class="bi bi-star-fill"></i>
+                                            </span>
+                                        </h3>
+                                        <p class="fs-7">I got your message bro</p>
+                                        <p class="fs-7 text-secondary"> <i class="bi bi-clock-fill me-1"></i> 4 Hours
+                                            Ago
+                                        </p>
+                                    </div>
+                                </div> <!--end::Message-->
+                            </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item">
+                                <!--begin::Message-->
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"> <img src="../../dist/assets/img/user3-128x128.jpg"
+                                            alt="User Avatar" class="img-size-50 rounded-circle me-3"> </div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="dropdown-item-title">
+                                            Nora Silvester
+                                            <span class="float-end fs-7 text-warning"> <i class="bi bi-star-fill"></i>
+                                            </span>
+                                        </h3>
+                                        <p class="fs-7">The subject goes here</p>
+                                        <p class="fs-7 text-secondary"> <i class="bi bi-clock-fill me-1"></i> 4 Hours
+                                            Ago
+                                        </p>
+                                    </div>
+                                </div> <!--end::Message-->
+                            </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item dropdown-footer">See
+                                All Messages</a>
+                        </div>
+                    </li> <!--end::Messages Dropdown Menu--> <!--begin::Notifications Dropdown Menu-->
+                    <li class="nav-item dropdown"> <a class="nav-link" data-bs-toggle="dropdown" href="#"> <i
+                                class="bi bi-bell-fill"></i> <span class="navbar-badge badge text-bg-warning">15</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end"> <span
+                                class="dropdown-item dropdown-header">15 Notifications</span>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item"> <i
+                                    class="bi bi-envelope me-2"></i> 4 new messages
+                                <span class="float-end text-secondary fs-7">3 mins</span> </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item"> <i
+                                    class="bi bi-people-fill me-2"></i> 8 friend requests
+                                <span class="float-end text-secondary fs-7">12 hours</span> </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item"> <i
+                                    class="bi bi-file-earmark-fill me-2"></i> 3 new reports
+                                <span class="float-end text-secondary fs-7">2 days</span> </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item dropdown-footer">
+                                See All Notifications
+                            </a>
+                        </div>
+                    </li> <!--end::Notifications Dropdown Menu--> <!--begin::Fullscreen Toggle-->
+                    <li class="nav-item"> <a class="nav-link" href="#" data-lte-toggle="fullscreen"> <i
+                                data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i> <i
+                                data-lte-icon="minimize" class="bi bi-fullscreen-exit" style="display: none;"></i> </a>
+                    </li> <!--end::Fullscreen Toggle--> <!--begin::User Menu Dropdown-->
+                    <li class="nav-item dropdown user-menu"> <a href="#" class="nav-link dropdown-toggle"
+                            data-bs-toggle="dropdown"> <img src="../../dist/assets/img/user2-160x160.jpg"
+                                class="user-image rounded-circle shadow" alt="User Image"> <span
+                                class="d-none d-md-inline">Alexander Pierce</span> </a>
+                        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end"> <!--begin::User Image-->
+                            <li class="user-header text-bg-primary"> <img src="../../dist/assets/img/user2-160x160.jpg"
+                                    class="rounded-circle shadow" alt="User Image">
+                                <p>
+                                    Alexander Pierce - Web Developer
+                                    <small>Member since Nov. 2023</small>
+                                </p>
+                            </li> <!--end::User Image--> <!--begin::Menu Body-->
+                            <li class="user-body"> <!--begin::Row-->
+                                <div class="row">
+                                    <div class="col-4 text-center"> <a href="#">Followers</a> </div>
+                                    <div class="col-4 text-center"> <a href="#">Sales</a> </div>
+                                    <div class="col-4 text-center"> <a href="#">Friends</a> </div>
+                                </div> <!--end::Row-->
+                            </li> <!--end::Menu Body--> <!--begin::Menu Footer-->
+                            <li class="user-footer"> <a href="#" class="btn btn-default btn-flat">Profile</a> <a
+                                    href="#" class="btn btn-default btn-flat float-end">Sign out</a> </li>
+                            <!--end::Menu Footer-->
+                        </ul>
+                    </li> <!--end::User Menu Dropdown-->
+                </ul> <!--end::End Navbar Links-->
+            </div> <!--end::Container-->
+        </nav> <!--end::Header--> <!--begin::Sidebar-->
+
+        <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark"> <!--begin::Sidebar Brand-->
+            <div class="sidebar-brand"> <!--begin::Brand Link--> <a href="./index.html" class="brand-link">
+                    <!--begin::Brand Image--> <!--begin::Brand Text--> <span class="brand-text fw-light">AdminLTE
+                        4</span> <!--end::Brand Text--> </a> <!--end::Brand Link--> </div> <!--end::Sidebar Brand-->
+            <!--begin::Sidebar Wrapper-->
+            <div class="sidebar-wrapper">
+                <nav class="mt-2"> <!--begin::Sidebar Menu-->
+                    <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu"
+                        data-accordion="false">
+                        <li class="nav-item"> <a href="prj_member_R.html" class="nav-link active"> <i
+                                    class="nav-icon bi bi-palette"></i>
+                                <p>會員資料</p>
+                            </a>
+                        </li>
+                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="nav-icon bi bi-speedometer"></i>
+                                <p>
+                                    旅遊景點
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item"> <a href="prj_tour_pack_R.html" class="nav-link"> <i
+                                            class="nav-icon bi bi-circle"></i>
+                                        <p>旅遊景點明細</p>
+                                    </a> </li>
+                                <li class="nav-item"> <a href="prj_tour_pack_C.html" class="nav-link"> <i
+                                            class="nav-icon bi bi-circle"></i>
+                                        <p>新增旅遊景點</p>
+                                    </a> </li>
+                                <li class="nav-item"> <a href="#" class="nav-link"> <i
+                                            class="nav-icon bi bi-circle"></i>
+                                        <p>Dashboard v3</p>
+                                    </a> </li>
+                            </ul>
+                        </li>
+                    </ul> <!--end::Sidebar Menu-->
+                </nav>
+            </div> <!--end::Sidebar Wrapper-->
+        </aside> <!--end::Sidebar--> <!--begin::App Main-->
+
+        <main class="app-main"> <!--begin::App Content Header-->
+
+            <div class="container mt-4">
+                <div class="mb-3">
+                    <input type="text" id="searchBox" class="form-control" placeholder="搜尋會員...">
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-12 table-responsive">
+                        <table class="table align-middle text-center ">
+                            <thead>
+                                <tr>
+                                    <th width="5%">編號</th>
+                                    <th width="10%">會員帳號</th>
+                                    <th width="10%">Email</th>
+                                    <th width="10%">生日日期</th>
+                                    <th width="20%">會員頭貼</th>
+                                    <th width="15%">註冊時間</th>
+                                    <th width="15%">更新時間</th>
+                                    <th width="15%">更新 / 停權</th>
+                                </tr>
+                            </thead>
+                            <tbody id="userData">
+                                <tr>
+                                    <td data-th="編號">001</td>
+                                    <td data-th="會員帳號">XX</td>
+                                    <td data-th="Email">XX</td>
+                                    <td data-th="生日日期">XX</td>
+                                    <td data-th="會員頭貼"><img src="image/mountain001.jpg" alt="" class="w-50 mx-auto">
+                                    </td>
+                                    <td data-th="註冊時間">XX</td>
+                                    <td data-th="更新時間">XX</td>
+                                    <td data-th="功能">
+                                        <button class="btn btn-warning" data-bs-toggle="modal"
+                                            data-bs-target="#updateModal" data-id="xxx" data-username="xxx"
+                                            data-email="xxx" data-birthDate="xxx" data-photo="xxx" data-full_name="xxx"
+                                            data-address="xxx" data-address_city="xxx" data-address_area="xxx"
+                                            data-orderCount="xxx" data-membershipType="xxx" data-createdAt="xxx"
+                                            data-updateddAt="xxx" id="update_btn">更新</button>更新</button>
+                                        <button class="btn btn-danger" data-id="XX" id="delete_btn">停權</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="pagination d-flex justify-content-center m-3">
+                            <button id="prevPage" class="btn btn-primary mx-2">上一頁</button>
+                            <!-- <span id="pageNumber"></span> -->
+                            <div id="pageNumbers" class="page-numbers mx-2"></div>
+                            <button id="nextPage" class="btn btn-primary mx-2">下一頁</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- updateModal -->
+            <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header text-bg-secondary">
+                            <h1 class="modal-title fs-5 fw-900" id="exampleModalLabel">會員資料更新</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-4 align-content-center">
+                                    <div class="mb-3">
+                                        <label for="username" class="form-label">會員帳號</label>
+                                        <input type="text" class="form-control" name="username" id="username" disabled>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="text" class="form-control" name="email" id="email">
+                                        <div class="valid-feedback">符合規則</div>
+                                        <div class="invalid-feedback">不符合規則</div>
+                                    </div>
+                                </div>
+                                <div class="col-4 align-content-center">
+                                    <div class="mb-3">
+                                        <label for="birthdate" class="form-label">會員生日</label>
+                                        <input type="text" id="birthdate" class="form-control"
+                                            placeholder="請輸入年/月/日或點選">
+                                        <div class="valid-feedback">符合規則</div>
+                                        <div class="invalid-feedback">不符合規則</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="full_name" class="form-label">姓名：</label>
+                                        <input type="text" name="full_name" id="full_name" class="form-control"
+                                            list="full_name_list" placeholder="請輸入您的姓名">
+                                        <datalist id="full_name_list">
+                                            <option value="王曉明">王曉明</option>
+                                            <option value="李雅婷">李雅婷</option>
+                                            <option value="陳彥博">陳彥博</option>
+                                            <option value="張欣怡">張欣怡</option>
+                                            <option value="劉承翰">劉承翰</option>
+                                        </datalist>
+                                        <div class="valid-feedback"></div>
+                                        <div class="invalid-feedback">尚未輸入</div>
+                                    </div>
+                                </div>
+                                <div class="col-4 mb-2">
+                                    <div class="photo bg-cover border border-1 border-dark rounded-5 shadow-lg"
+                                        id="member_photo">
+                                        <input type="hidden" id="member_photo_check">
+                                        <div class="h4 text-center text-white" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">
+                                            <label for="" type="button">會員頭照</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="address" class="form-label">地址：</label>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <select name="address_city" id="address_city"
+                                            class="form-select form-select text-center">
+                                            <option value="" selected disabled>----選擇縣市----</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select name="address_area" id="address_area"
+                                            class="form-select form-select text-center">
+                                            <option value="" selected disabled>----選擇鄉鎮區名稱----</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control mt-2" list="address_list" placeholder="請輸入地址"
+                                    name="address" id="address">
+                                <datalist id="address_list">
+                                    <option value="工業區一路100號">工業區一路100號</option>
+                                    <option value="忠孝東路一段100號">忠孝東路一段100號</option>
+                                    <option value="台灣大道三段200號">台灣大道三段200號</option>
+                                    <option value="中山二路300號">中山二路300號</option>
+                                    <option value="文化路一段150號">文化路一段150號</option>
+                                </datalist>
+                                <div class="valid-feedback"></div>
+                                <div class="invalid-feedback">尚未輸入</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">下單次數</span>
+                                        <input type="text" class="form-control" id="order_count"
+                                            aria-describedby="basic-addon1" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">會員等級</span>
+                                        <input type="text" class="form-control" id="membership_type"
+                                            aria-describedby="basic-addon1" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">註冊時間</span>
+                                        <input type="text" class="form-control" id="created_at"
+                                            aria-describedby="basic-addon1" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">會員資料更新時間</span>
+                                        <input type="text" class="form-control" id="updated_at"
+                                            aria-describedby="basic-addon1" disabled>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                id="updateModal_cx_btn">取消</button>
+                            <button type="button" class="btn btn-primary" id="updateModal_ok_btn">確認</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">更新會員頭照</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="member_photo" class="form-label">會員頭照</label>
+                                    <input type="file" class="form-control form-control-lg" id="fileupload">
+                                    <div class="valid-feedback">上傳格式為jpeg or png!</div>
+                                    <div class="invalid-feedback">上傳格式錯誤!</div>
+                                    <a href="" data-lightbox="photo" id="photo-lightbox">
+                                        <img src="" alt="" class="img-fluid w-25 mt-3 d-none" id="prveImg">
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-primary" id="cfm_member_photo"
+                                data-bs-dismiss="modal">確認</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main> <!--end::App Main--> <!--begin::Footer-->
+
+        <footer class="app-footer"> <!--begin::To the end-->
+            <div class="float-end d-none d-sm-inline">Anything you want</div> <!--end::To the end-->
+            <!--begin::Copyright--> <strong>
+                Copyright &copy; 2014-2024&nbsp;
+                <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
+            </strong>
+            All rights reserved.
+            <!--end::Copyright-->
+        </footer> <!--end::Footer-->
+
+    </div> <!--end::App Wrapper-->
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/adminlte.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+
+        let currentPage = 1;
+        let limit = 25;  // 每頁顯示 25 筆
+        let totalPages = 1;
+
+        var allCityData; //所有的縣市資料
+        var selectedCity;
+        var selectedArea;
+        var showimg;
+        var photo;
+        var userId;
+
+        var flag_email = true;
+        var flag_address_city = true;
+        var flag_address_area = true;
+        var flag_address = true;
+        var flag_full_name = true;
+        var flag_birthdatepicker = true;
+        var flag_photo = true;
+
+        $(function () { //begin of main function
+
+            loadData();
+
+
+            $("#searchBox").bind("input propertychange", function () {
+
+                let value = $(this).val().toLowerCase();
+
+                if (value != "") {
+
+                    //let found = false;
+
+                    var JSONdata = {};
+                    JSONdata["query"] = value;
+                    console.log(JSON.stringify(JSONdata));
+
+                    // $("#userData tr").each(function () {
+                    //     let match = $(this).text().toLowerCase().includes(value);
+                    //     $(this).toggle(match);
+                    //     if (match) found = true;
+                    // });
+
+                    // 如果當前頁面沒有匹配結果，向後端請求搜尋
+                    //if (!found) {
+
+
+                    $("#userData tr").empty();
+
+                    $.ajax({
+                        url: "prj_member_control_api.php?action=searchdata", // 這裡換成你的 API URL
+                        type: "POST",
+                        data: JSON.stringify(JSONdata),
+                        dataType: "json",
+                        success: function (data) {
+                            console.log(data);
+                            if (data.state) {
+                                $("#userData").empty();
+                                data.data.forEach(function (item) {
+                                    var strHTML = `<tr>
+                            <td data-th="編號">${item.id}</td>
+                            <td data-th="會員帳號">${item.username}</td>
+                            <td data-th="Email">${item.email}</td>
+                            <td data-th="生日日期">${item.birthDate}</td>
+                            <td data-th="會員頭貼"><img src="upload/${item.photo}" alt="" class="w-50 mx-auto"></td>
+                            <td data-th="註冊時間">${item.user_createdAt}</td>
+                            <td data-th="更新時間">${item.user_updatedAt}</td>
+                            <td data-th="功能">
+                                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal"
+                                    data-id="${item.id}" data-username="${item.username}" data-email="${item.email}" data-birthdate="${item.birthDate}" data-photo="${item.photo}"
+                                    data-full_name="${item.full_name}" data-address="${item.address}" data-address_city="${item.city}" data-address_area="${item.area}" data-order_ount="${item.orderCount}" data-membership_type="${item.membershipType}" data-created_at="${item.user_createdAt}" data-updated_at="${item.user_updatedAt}" id="update_btn">更新</button>
+                                <button class="btn btn-danger" data-id="XX" id="delete_btn">停權</button>
+                            </td>
+                        </tr>`;
+                                    $("#userData").append(strHTML);
+
+                                });
+                            }
+
+                        },
+                        error: function () {
+                            Swal.fire({
+                                title: "API介接錯誤",
+                                text: "prj_member_control_api.php?action=getalldata",
+                                icon: "error"
+                            });
+                        }
+                    });
+
+                } else {
+                    loadData();
+                }
+            });
+
+
+            // 上一頁
+            $("#prevPage").click(function () {
+                if (currentPage > 1) {
+                    currentPage--;
+                    loadData(currentPage);
+                }
+            });
+
+            // 下一頁
+            $("#nextPage").click(function () {
+                currentPage++;
+                loadData(currentPage);
+            });
+
+            $("#birthdate").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                dateFormat: "yy-mm-dd",
+                yearRange: "1960:2025",
+
+            });
+
+
+
+            //確認uid001是否存在
+            if (getCookie("uid01")) {
+                //將uid01傳遞至後端API執行驗證
+                //input: {"uid01" : "owner01"}
+                console.log(getCookie("level"));
+                var JSONdata = {};
+                JSONdata["uid01"] = getCookie("uid01");
+
+                $.ajax({
+                    type: "POST",
+                    url: "prj_member_control_api.php?action=chkuid",
+                    data: JSON.stringify(JSONdata),
+                    dataType: "json",
+                    success: showdata_checkuid,
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤",
+                            text: "prj_member_control_api.php?action=chkuid",
+                            icon: "error"
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: "請先登入會員",
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    allowOutsideClick: false
+                }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                        location.href = "prj_SPA.html"
+                    }
+                });
+            }
+
+            //登出按鈕監聽
+            $("#s02_logout_btn").click(function () {
+                setCookie("uid01", "", 7);
+                Swal.fire({
+                    //title: data.message,
+                    text: "已登出成功!!",
+                    icon: "success"
+                }).then((result) => {
+                    location.href = "prj_SPA.html";
+                });
+
+            });
+
+            // 渲染縣市資料
+            $.ajax({
+                type: "GET",
+                url: "js/CityCountyData.json",
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    allCityData = data;
+
+                    //產生縣市選單
+                    $("#address_city").empty();
+                    $("#address_city").append(`<option value="" selected disabled>---選擇縣市---</option>`);
+                    allCityData.forEach(function (item) {
+                        var strHTML = `<option value="${item.CityName}">${item.CityName}</option>`;
+                        $("#address_city").append(strHTML);
+                    });
+
+                },
+                error: function () {
+                    Swal.fire({
+                        title: "API介接錯誤",
+                        text: "js/CityCountyData.json",
+                        icon: "error"
+                    });
+                }
+            });
+
+            /*
+                事件委派 (on("click", "#update_btn", function() {...}))
+
+                事件是 綁定到 #userData，而不是按鈕本身，即使 #update_btn 是動態產生的，它依然可以觸發。
+
+                #userData 是靜態存在的，這樣每次內容變更時，#update_btn 仍能正確響應點擊事件。
+
+                避免 empty() 移除已綁定事件
+
+                .empty() 會清除 #userData 裡的所有內容，如果事件是直接綁定在 .click() 上，那麼新的 #update_btn 不會繼承這個事件。
+
+                on() 方式確保即使 .empty() 之後新增的按鈕仍然能觸發事件。
+            */
+            $("#userData").on("click", "#update_btn", function () {
+
+                $("#address_area").removeClass("is-valid");
+                $("#address_area").removeClass("is-invalid");
+                $("#address_city").removeClass("is-valid");
+                $("#address_city").removeClass("is-invalid");
+                $("#email").removeClass("is-valid");
+                $("#email").removeClass("is-invalid");
+                $("#full_name").removeClass("is-valid");
+                $("#full_name").removeClass("is-invalid");
+                $("#birthDate").removeClass("is-valid");
+                $("#birthDate").removeClass("is-invalid");
+                $("#fileupload").val("");
+                $("#fileupload").removeClass("is-valid");
+                $("#fileupload").removeClass("is-invalid");
+                $("#prveImg").removeAttr("src");
+
+
+                // console.log("test");
+                // console.log($(this).data("address_city"));
+                // console.log($(this).data("pname"));
+                // console.log($(this).data("kind"));
+                // console.log($(this).data("price"));
+                // console.log("upload/" + $(this).data("photo"));
+                // console.log($(this).data("remark"));
+                // console.log($(this).data("created_at"));
+
+                userId = $(this).data("id");
+                $("#username").val($(this).data("username")).attr("data-original", $(this).data("username"));
+                $("#email").val($(this).data("email")).attr("data-original", $(this).data("email"));
+                $("#full_name").val($(this).data("full_name")).attr("data-original", $(this).data("full_name"));
+                $("#address").val($(this).data("address")).attr("data-original", $(this).data("address"));
+                $("#address_city").val($(this).data("address_city")).attr("data-original", $(this).data("address_city"));
+                selectedCity = $(this).data("address_city")
+                $("#address_area").val($(this).data("address_area")).attr("data-original", $(this).data("address_area"));
+                selectedArea = $(this).data("address_area");
+                $("#address_area").empty();
+                $("#address_area").append(`<option value="${selectedArea}">${selectedArea}</option>`);
+                $("#birthdate").val($(this).data("birthdate")).attr("data-original", $(this).data("birthdate"));
+                $("#member_photo").css("background-image", `url(/web1/upload/${$(this).data("photo")})`);
+                $("#order_count").val($(this).data("order_ount"));
+                $("#membership_type").val($(this).data("membership_type"));
+                $("#created_at").val($(this).data("created_at"));
+                $("#updated_at").val($(this).data("updated_at"));
+
+
+
+                // $("#remark").val($(this).data("remark"));
+                // var strphoto = "upload/" + $(this).data("photo");
+                // showimg = $(this).data("photo");
+                // $("#prveImg").removeClass("d-none");
+                // $("#prveImg").attr("src", strphoto);
+                // $("#photo-change").attr("href", strphoto);
+
+                //監聽縣市選單，渲染鄉鎮區選單
+                $("#address_city").change(function () {
+                    selectedCity = $(this).val();
+
+                    if (selectedCity != "") {
+                        $(this).removeClass("is-invalid");
+                        $(this).addClass("is-valid");
+                        $("#address_area").removeClass("is-valid");
+                        $("#address_area").addClass("is-invalid");
+                        flag_address_city = true;
+                        flag_address_area = false;
+                    } else {
+                        $(this).removeClass("is-valid");
+                        $(this).addClass("is-invalid");
+                        flag_address_city = false;
+                    }
+
+                    //過濾所選取的縣市名稱，並找出該鄉鎮區的資料
+                    allCityData.forEach(function (item) {
+                        if (item.CityName == selectedCity) {
+                            //產生鄉鎮區選單
+                            $("#address_area").empty();
+                            $("#address_area").append(`<option value="" selected disabled>---選擇鄉鎮區名稱---</option>`);
+                            item.AreaList.forEach(function (myitem) {
+                                var strHTML = `<option value="${myitem.AreaName}">${myitem.AreaName}</option>`;
+                                $("#address_area").append(strHTML);
+                            });
+                        }
+                    });
+                });
+
+                //監聽鄉鎮區選單
+                $("#address_area").change(function () {
+                    if ($(this).val() != "") {
+                        $(this).removeClass("is-invalid");
+                        $(this).addClass("is-valid");
+                        flag_address_area = true;
+                    } else {
+                        $(this).removeClass("is-valid");
+                        $(this).addClass("is-invalid");
+                        flag_address_area = false;
+                    }
+                });
+
+                //即時監聽 birthdate
+                $("#birthdate").change(function () {
+
+                    const pattern = /^(19|20)\d{2}[-/](0[1-9]|1[0-2])[-/](0[1-9]|[12][0-9]|3[01])$/;
+                    console.log(pattern.test($(this).val()));
+
+                    date = $(this).val();
+                    year = date.substring(0, 4);
+                    month = date.substring(5, 7);
+                    day = date.substring(8, 10);
+                    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                        maxFebraryDays = 29;
+                    } else {
+                        maxFebraryDays = 28;
+                    }
+
+                    if (pattern.test($(this).val())) {
+                        if (month != 2) {
+                            $("#birthdate").removeClass("is-invalid");
+                            $("#birthdate").addClass("is-valid");
+                            flag_birthdatepicker = true;
+                        } else if (month == 2 && day <= maxFebraryDays) {
+                            $("#birthdate").removeClass("is-invalid");
+                            $("#birthdate").addClass("is-valid");
+                            flag_birthdatepicker = true;
+                        } else {
+                            $("#birthdate").removeClass("is-valid");
+                            $("#birthdate").addClass("is-invalid");
+                            flag_birthdatepicker = false;
+                        }
+
+                    } else {
+
+                        $("#birthdate").removeClass("is-valid");
+                        $("#birthdate").addClass("is-invalid");
+                        flag_birthdatepicker = false;
+
+                    }
+                });
+
+                //即時監聽 email
+                $("#email").bind("input propertychange", function () {
+
+                    const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                    console.log(pattern.test($(this).val()));
+
+                    if (pattern.test($(this).val())) {
+                        $("#email").removeClass("is-invalid");
+                        $("#email").addClass("is-valid");
+                        flag_email = true;
+
+                    } else {
+                        $("#email").removeClass("is-valid");
+                        $("#email").addClass("is-invalid");
+                        $("#email-invalid-feedback").text("請依下列格式輸入您的電子郵件：user@example.com");
+                        flag_email = false;
+                    }
+                });
+
+                //監聽姓名
+                $("#full_name").bind("input propertychange", function () {
+                    if ($(this).val() != "") {
+                        $(this).removeClass("is-invalid");
+                        $(this).addClass("is-valid");
+                        flag_full_name = true;
+                    } else {
+                        $(this).removeClass("is-valid");
+                        $(this).addClass("is-invalid");
+                        flag_full_name = false;
+                    }
+                });
+
+
+                // 當點擊「確認」按鈕時，將頭像更新至第一個模態框
+                $('#cfm_member_photo').click(function () {
+                    // 關閉第二個模態框，並回到第一個模態框
+                    $('#updateModal').modal('show');
+                    $("#member_photo").css("background-image", `url(${photo})`);
+                    $("#member_photo_check").val(showimg);
+                });
+
+                // 選擇上傳的圖片
+                $("#fileupload").change(function () {
+                    console.log(fileupload);
+                    console.log(fileupload.files[0]);
+                    console.log(fileupload.files[0].type);
+
+                    if (fileupload.files[0].type == "image/jpeg" || fileupload.files[0].type == "image/png") {
+                        console.log(URL.createObjectURL(fileupload.files[0]));
+                        $("#prveImg").removeClass("d-none");
+                        $("#prveImg").attr("src", URL.createObjectURL(fileupload.files[0]));
+                        photo = URL.createObjectURL(fileupload.files[0]);
+
+                        $("#photo-lightbox").attr("href", URL.createObjectURL(fileupload.files[0]));
+                        showimg = fileupload.files[0].name;
+                        console.log(showimg);
+
+                        //顯示feedback
+                        $("#fileupload").removeClass("is-invalid");
+                        $("#fileupload").addClass("is-valid");
+
+                        flag_upload = true;
+                    } else {
+                        //顯示feedback
+                        $("#fileupload").removeClass("is-valid");
+                        $("#fileupload").addClass("is-invalid");
+                        $("#prveImg").addClass("d-none");
+
+                        flag_upload = false;
+
+                        //alert("只支援jpeg or png!");
+                    }
+                });
+
+            });
+
+            //監聽按鈕 ok_btn
+            $("#updateModal_ok_btn").click(function () {
+                //if (flag_country && flag_city && flag_title && flag_description && flag_duration && flag_currency && flag_price && flag_available_seats) {
+                if (true) {
+                    //傳遞至後端API 執行新增
+
+                    var JSONdata = {};
+                    JSONdata["id"] = userId; // 確保 ID 被傳遞
+
+                    // 定義欄位對應
+                    var fields = {
+                        "email": "#email",
+                        "city": "#address_city",
+                        "area": "#address_area",
+                        "address": "#address",
+                        "full_name": "#full_name",
+                        "birthDate": "#birthdate"
+                    };
+
+                    var hasUpdate = false; // 標記是否有變更
+
+                    $.each(fields, function (key, selector) {
+                        var $field = $(selector);
+                        var originalValue = $field.attr("data-original") || ""; // 取得原始值
+                        var currentValue = $field.val() || ""; // 取得當前值
+
+                        if (originalValue !== currentValue) {
+                            JSONdata[key] = currentValue; // 只加入變更的欄位
+                            hasUpdate = true;
+                        }
+                    });
+
+                    //console.log(hasUpdate);
+                    //console.log(JSON.stringify(JSONdata));
+
+                    // ✅ 檢查圖片是否有變更
+                    var originalPhoto = $("#member_photo_check").attr("data-original") || ""; // 從 data-original 取得舊圖片名稱
+                    var newPhoto = $("#member_photo_check").val() || ""; // 假設圖片上傳後，名稱存入 data-new-photo
+
+                    if (newPhoto && newPhoto !== originalPhoto) {
+                        JSONdata["photo"] = newPhoto;
+                        JSONdata["delete_old_photo"] = originalPhoto; // 傳舊圖名稱讓後端刪除
+                        hasUpdate = true;
+                    }
+
+                    if (hasUpdate) {
+                        console.log(JSON.stringify(JSONdata));
+
+                        $.ajax({
+                            type: "POST",
+                            url: "prj_member_control_api.php?action=update",
+                            data: JSON.stringify(JSONdata),
+                            dataType: "json",
+                            success: function (data) {
+                                console.log(data);
+                                Swal.fire({
+                                    title: "更新資料成功",
+                                    //text: "已登出成功!!",
+                                    icon: "success"
+                                }).then((result) => {
+                                    location.href = "prj_member_R.html";
+                                });
+                            },
+                            error: function () {
+                                alert("error-prj_member_control_api.php?action=update");
+                            }
+                        });
+
+                    } else {
+                        Swal.fire({
+                            title: "無資料被更新",
+                            text: "prj_member_control_api.php?action=chkuid",
+                            icon: "error"
+                        });
+                    }
+
+                    if (showimg != "") {
+                        if (flag_upload) {
+                            console.log("可上傳至後端!");
+                            //*************************
+                            //傳遞至資料後端api
+                            var formData = new FormData();
+                            formData.append("file", fileupload.files[0]);
+                            console.log(formData);
+
+                            $.ajax({
+                                type: "POST",
+                                url: "prj_member_control_api.php?action=upload",
+                                data: formData,
+                                dataType: "json",
+                                cache: false,
+                                contentType: false,
+                                processData: false,
+                                success: function (data) {
+                                    console.log(data);
+                                },
+                                error: function () {
+                                    console.log("error-prj_member_control_api.php?action=upload");
+                                }
+                            });
+
+                        } else {
+                            console.log("格式錯誤不可以上傳至後端!");
+                            alert("格式錯誤不可以上傳至後端!");
+                        }
+                    }
+                } else {
+                    Swal.fire({
+                        title: "欄位輸入錯誤或空白!",
+                        icon: "error"
+                    });
+                }
+            });
+
+
+
+
+
+        });//end of main function
+
+        function loadData(page = 1) {
+            $.ajax({
+                type: "GET",
+                url: `prj_member_control_api.php?action=getalldata&page=${page}&limit=${limit}`,
+                dataType: "json",
+                async: false,
+                success: showdata,
+                error: function () {
+                    Swal.fire({
+                        title: "API介接錯誤",
+                        text: "prj_member_control_api.php?action=getalldata",
+                        icon: "error"
+                    });
+                }
+            });
+        }
+
+        function showdata(data) {
+            console.log(data);
+            if (data.state) {
+                $("#userData").empty();
+                data.data.data.forEach(function (item) {
+                    var strHTML = `<tr>
+                            <td data-th="編號">${item.id}</td>
+                            <td data-th="會員帳號">${item.username}</td>
+                            <td data-th="Email">${item.email}</td>
+                            <td data-th="生日日期">${item.birthDate}</td>
+                            <td data-th="會員頭貼"><img src="upload/${item.photo}" alt="" class="w-50 mx-auto"></td>
+                            <td data-th="註冊時間">${item.user_createdAt}</td>
+                            <td data-th="更新時間">${item.user_updatedAt}</td>
+                            <td data-th="功能">
+                                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal"
+                                    data-id="${item.id}" data-username="${item.username}" data-email="${item.email}" data-birthdate="${item.birthDate}" data-photo="${item.photo}"
+                                    data-full_name="${item.full_name}" data-address="${item.address}" data-address_city="${item.city}" data-address_area="${item.area}" data-order_ount="${item.orderCount}" data-membership_type="${item.membershipType}" data-created_at="${item.user_createdAt}" data-updated_at="${item.user_updatedAt}" id="update_btn">更新</button>
+                                <button class="btn btn-danger" data-id="XX" id="delete_btn">停權</button>
+                            </td>
+                        </tr>`;
+                    $("#userData").append(strHTML);
+
+                });
+
+                totalPages = Math.ceil(data.data.total_count / limit);  // 計算總頁數
+                // 更新分頁 UI
+                //updatePagination();
+                generatePageNumbers();
+
+            } else {
+                Swal.fire({
+                    title: data.message,
+                    text: "無資料",
+                    icon: "error"
+                });
+                currentPage = currentPage - 1;
+            }
+        }
+
+        function updatePagination() {
+            $("#pageNumber").text(`第 ${currentPage} 頁 / 共 ${totalPages} 頁`);
+            generatePageNumbers();
+        }
+
+        function generatePageNumbers() {
+            $("#pageNumbers").empty(); // 清空頁碼容器
+
+            let maxPagesToShow = 10; // 顯示最多 5 個頁碼（前 4 + 省略號 + 最後 1 頁）
+            let pageHtml = "";
+
+            if (totalPages <= maxPagesToShow) {
+                // 如果總頁數少於 maxPagesToShow，顯示所有頁數
+                for (let i = 1; i <= totalPages; i++) {
+                    pageHtml += createPageButton(i);
+                }
+            } else {
+                // // 只顯示前 4 頁 + "..." + 最後 1 頁
+                // for (let i = 1; i <= 6; i++) {
+                //     pageHtml += createPageButton(i);
+                // }
+
+                // pageHtml += `<span class="dots">...</span>`; // 省略號
+                // pageHtml += createPageButton(totalPages); // 最後一頁
+
+                if (currentPage >= 1) {
+                    pageHtml += createPageButton(1);
+                    if (currentPage >= 4) pageHtml += `<span class="dots">...</span>`;
+                }
+
+                // let startPage = Math.max(2, currentPage - 1);
+                // let endPage = Math.min(totalPages - 1, currentPage + 1);
+
+                let range = 3; // 控制要顯示前後幾頁
+                let startPage = Math.max(2, currentPage - range);
+                let endPage = Math.min(totalPages - 1, currentPage + range);
+
+
+                for (let i = startPage; i <= endPage; i++) {
+                    pageHtml += createPageButton(i);
+                }
+
+                if (currentPage < totalPages - 2) {
+                    pageHtml += `<span class="dots">...</span>`;
+                }
+
+                pageHtml += createPageButton(totalPages);
+            }
+
+            $("#pageNumbers").html(pageHtml);
+
+            // 綁定點擊事件
+            $(".page-btn").click(function () {
+                currentPage = $(this).data("page");
+                loadData(currentPage);
+            });
+        }
+
+
+        // 產生頁碼按鈕的函數
+        function createPageButton(page) {
+            let activeClass = page === currentPage ? "active" : "";
+            return `<button class="page-btn ${activeClass}" data-page="${page}">${page}</button>`;
+        }
+
+        //驗證UID01監聽-成功
+        function showdata_checkuid(data) {
+            if (data.state) {
+
+                console.log(data)
+                //顯示歡迎訊息
+                $("#s02_username_showtext").removeClass("d-none");
+                $("#s02_username_text").text(data.data.username);
+
+                //隱藏註冊與登入按鈕
+                $("#s02_reg_btn").addClass("d-none");
+                $("#s02_login_btn").addClass("d-none");
+
+                //顯示登出按鈕
+                $("#s02_logout_btn").removeClass("d-none");
+
+                $("#afterLogin").removeClass("d-none");
+
+                if (data.data.level == 50) {
+                    $("#adminOnly").removeClass("d-none");
+                    $("#s02_username_showtext").text("歡迎管理員：" + data.data.username);
+                }
+
+                // //顯示控制台按鈕
+                // $("#s02_admin_btn").removeClass("d-none");
+
+                // //顯示口罩地圖按鈕
+                // $("#s02_maskmap_btn").removeClass("d-none");
+
+                // //顯示會員按鈕
+                // $("#s02_member_btn").removeClass("d-none");
+            }
+        }
+
+        //from W3C--讀取cookie
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        //from W3C--寫入cookie
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

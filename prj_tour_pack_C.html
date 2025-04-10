@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅遊行程 - 建檔</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css"
+        integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous">
+    <!--end::Third Party Plugin(Bootstrap Icons)-->
+    <link rel="stylesheet" href="css/adminlte.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+
+
+    <style>
+
+
+    </style>
+
+</head>
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+
+    <div class="app-wrapper"> <!--begin::Header-->
+        <nav class="app-header navbar navbar-expand bg-body"> <!--begin::Container-->
+            <div class="container-fluid"> <!--begin::Start Navbar Links-->
+                <ul class="navbar-nav">
+                    <li class="nav-item"> <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button"> <i
+                                class="bi bi-list"></i> </a> </li>
+                                <li class="nav-item d-none d-md-block"> <a href="prj_SPA.html" class="nav-link">Home</a> </li>
+                    <li class="nav-item d-none d-md-block"> <a href="#" class="nav-link">Contact</a> </li>
+                </ul> <!--end::Start Navbar Links--> <!--begin::End Navbar Links-->
+                <ul class="navbar-nav ms-auto"> <!--begin::Navbar Search-->
+                    <li class="nav-item"> <a class="nav-link" data-widget="navbar-search" href="#" role="button"> <i
+                                class="bi bi-search"></i> </a> </li> <!--end::Navbar Search-->
+                    <!--begin::Messages Dropdown Menu-->
+                    <li class="nav-item dropdown"> <a class="nav-link" data-bs-toggle="dropdown" href="#"> <i
+                                class="bi bi-chat-text"></i> <span class="navbar-badge badge text-bg-danger">3</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end"> <a href="#"
+                                class="dropdown-item"> <!--begin::Message-->
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"> <img src="../../dist/assets/img/user1-128x128.jpg"
+                                            alt="User Avatar" class="img-size-50 rounded-circle me-3"> </div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="dropdown-item-title">
+                                            Brad Diesel
+                                            <span class="float-end fs-7 text-danger"><i
+                                                    class="bi bi-star-fill"></i></span>
+                                        </h3>
+                                        <p class="fs-7">Call me whenever you can...</p>
+                                        <p class="fs-7 text-secondary"> <i class="bi bi-clock-fill me-1"></i> 4 Hours
+                                            Ago
+                                        </p>
+                                    </div>
+                                </div> <!--end::Message-->
+                            </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item">
+                                <!--begin::Message-->
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"> <img src="../../dist/assets/img/user8-128x128.jpg"
+                                            alt="User Avatar" class="img-size-50 rounded-circle me-3"> </div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="dropdown-item-title">
+                                            John Pierce
+                                            <span class="float-end fs-7 text-secondary"> <i class="bi bi-star-fill"></i>
+                                            </span>
+                                        </h3>
+                                        <p class="fs-7">I got your message bro</p>
+                                        <p class="fs-7 text-secondary"> <i class="bi bi-clock-fill me-1"></i> 4 Hours
+                                            Ago
+                                        </p>
+                                    </div>
+                                </div> <!--end::Message-->
+                            </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item">
+                                <!--begin::Message-->
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0"> <img src="../../dist/assets/img/user3-128x128.jpg"
+                                            alt="User Avatar" class="img-size-50 rounded-circle me-3"> </div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="dropdown-item-title">
+                                            Nora Silvester
+                                            <span class="float-end fs-7 text-warning"> <i class="bi bi-star-fill"></i>
+                                            </span>
+                                        </h3>
+                                        <p class="fs-7">The subject goes here</p>
+                                        <p class="fs-7 text-secondary"> <i class="bi bi-clock-fill me-1"></i> 4 Hours
+                                            Ago
+                                        </p>
+                                    </div>
+                                </div> <!--end::Message-->
+                            </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item dropdown-footer">See
+                                All Messages</a>
+                        </div>
+                    </li> <!--end::Messages Dropdown Menu--> <!--begin::Notifications Dropdown Menu-->
+                    <li class="nav-item dropdown"> <a class="nav-link" data-bs-toggle="dropdown" href="#"> <i
+                                class="bi bi-bell-fill"></i> <span class="navbar-badge badge text-bg-warning">15</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end"> <span
+                                class="dropdown-item dropdown-header">15 Notifications</span>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item"> <i
+                                    class="bi bi-envelope me-2"></i> 4 new messages
+                                <span class="float-end text-secondary fs-7">3 mins</span> </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item"> <i
+                                    class="bi bi-people-fill me-2"></i> 8 friend requests
+                                <span class="float-end text-secondary fs-7">12 hours</span> </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item"> <i
+                                    class="bi bi-file-earmark-fill me-2"></i> 3 new reports
+                                <span class="float-end text-secondary fs-7">2 days</span> </a>
+                            <div class="dropdown-divider"></div> <a href="#" class="dropdown-item dropdown-footer">
+                                See All Notifications
+                            </a>
+                        </div>
+                    </li> <!--end::Notifications Dropdown Menu--> <!--begin::Fullscreen Toggle-->
+                    <li class="nav-item"> <a class="nav-link" href="#" data-lte-toggle="fullscreen"> <i
+                                data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i> <i
+                                data-lte-icon="minimize" class="bi bi-fullscreen-exit" style="display: none;"></i> </a>
+                    </li> <!--end::Fullscreen Toggle--> <!--begin::User Menu Dropdown-->
+                    <li class="nav-item dropdown user-menu"> <a href="#" class="nav-link dropdown-toggle"
+                            data-bs-toggle="dropdown"> <img src="../../dist/assets/img/user2-160x160.jpg"
+                                class="user-image rounded-circle shadow" alt="User Image"> <span
+                                class="d-none d-md-inline">Alexander Pierce</span> </a>
+                        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end"> <!--begin::User Image-->
+                            <li class="user-header text-bg-primary"> <img src="../../dist/assets/img/user2-160x160.jpg"
+                                    class="rounded-circle shadow" alt="User Image">
+                                <p>
+                                    Alexander Pierce - Web Developer
+                                    <small>Member since Nov. 2023</small>
+                                </p>
+                            </li> <!--end::User Image--> <!--begin::Menu Body-->
+                            <li class="user-body"> <!--begin::Row-->
+                                <div class="row">
+                                    <div class="col-4 text-center"> <a href="#">Followers</a> </div>
+                                    <div class="col-4 text-center"> <a href="#">Sales</a> </div>
+                                    <div class="col-4 text-center"> <a href="#">Friends</a> </div>
+                                </div> <!--end::Row-->
+                            </li> <!--end::Menu Body--> <!--begin::Menu Footer-->
+                            <li class="user-footer"> <a href="#" class="btn btn-default btn-flat">Profile</a> <a
+                                    href="#" class="btn btn-default btn-flat float-end">Sign out</a> </li>
+                            <!--end::Menu Footer-->
+                        </ul>
+                    </li> <!--end::User Menu Dropdown-->
+                </ul> <!--end::End Navbar Links-->
+            </div> <!--end::Container-->
+        </nav> <!--end::Header--> <!--begin::Sidebar-->
+
+        <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark"> <!--begin::Sidebar Brand-->
+            <div class="sidebar-brand"> <!--begin::Brand Link--> <a href="./index.html" class="brand-link">
+                    <!--begin::Brand Image--> <!--begin::Brand Text--> <span class="brand-text fw-light">AdminLTE
+                        4</span> <!--end::Brand Text--> </a> <!--end::Brand Link--> </div> <!--end::Sidebar Brand-->
+            <!--begin::Sidebar Wrapper-->
+            <div class="sidebar-wrapper">
+                <nav class="mt-2"> <!--begin::Sidebar Menu-->
+                    <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu"
+                        data-accordion="false">
+                        <li class="nav-item"> <a href="prj_member_R.html" class="nav-link"> <i
+                                    class="nav-icon bi bi-palette"></i>
+                                <p>會員資料</p>
+                            </a>
+                        </li>
+                        <li class="nav-item menu-open"> <a href="#" class="nav-link active"> <i
+                                    class="nav-icon bi bi-speedometer"></i>
+                                <p>
+                                    旅遊景點
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item"> <a href="prj_tour_pack_R.html" class="nav-link"> <i
+                                            class="nav-icon bi bi-circle"></i>
+                                        <p>旅遊景點明細</p>
+                                    </a> </li>
+                                <li class="nav-item"> <a href="prj_tour_pack_C.html" class="nav-link active"> <i
+                                            class="nav-icon bi bi-circle"></i>
+                                        <p>新增旅遊景點</p>
+                                    </a> </li>
+                                <li class="nav-item"> <a href="#" class="nav-link"> <i
+                                            class="nav-icon bi bi-circle"></i>
+                                        <p>Dashboard v3</p>
+                                    </a> </li>
+                            </ul>
+                        </li>
+                    </ul> <!--end::Sidebar Menu-->
+                </nav>
+            </div> <!--end::Sidebar Wrapper-->
+        </aside> <!--end::Sidebar--> <!--begin::App Main-->
+
+        <main class="app-main"> <!--begin::App Content Header-->
+
+            <div>
+
+                <div class="row justify-content-center m-3">
+                    <div class="col-md-10">
+                        <div id="tabs">
+                            <ul>
+                                <li><a href="#tabs-1">旅遊行程</a></li>
+                                <li><a href="#tabs-2">行程天數/人數/價格</a></li>
+                                <li><a href="#tabs-3">景點圖片</a></li>
+                            </ul>
+                            <div id="tabs-1">
+
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="mb-3">
+                                            <label for="country" class="form-label">景點國家</label>
+                                            <select name="country" id="country"
+                                                class="form-select form-select  is-invalid">
+                                                <option value="" class="text-center" selected disabled>==請選擇==</option>
+                                                <option value="ITALY_義大利">義大利</option>
+                                                <option value="FRANCE_法國">法國</option>
+                                                <option value="SPAIN_西班牙">西班牙</option>
+                                                <option value="PORTUGAL_葡萄牙">葡萄牙</option>
+                                            </select>
+                                            <div class="valid-feedback"></div>
+                                            <div class="invalid-feedback">尚未選擇</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="mb-3">
+                                            <label for="city" class="form-label">景點城市（最多2個）</label>
+                                            <select name="city_first" id="city_first"
+                                                class="form-select form-select  is-invalid">
+                                                <option value="" class="text-center" selected disabled>==請選擇==</option>
+                                                <option value="羅馬">羅馬</option>
+                                            </select>
+                                            <div class="valid-feedback"></div>
+                                            <div class="invalid-feedback">尚未選擇</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <select name="city_second" id="city_second" class="form-select form-select">
+                                                <option value="" class="text-center" selected disabled>==請選擇==</option>
+                                                <option value="羅馬">羅馬</option>
+                                            </select>
+                                            <div class="valid-feedback"></div>
+                                            <div class="invalid-feedback">尚未選擇</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 col-8">
+                                    <label for="title" class="form-label">旅遊行程名稱</label>
+                                    <input type="text" name="title" id="title"
+                                        class="form-control form-control  is-invalid" placeholder="字數50以內"
+                                        list="title_list">
+                                    <datalist id="title_list">
+                                        <option value=""></option>
+                                    </datalist>
+                                    <div class="valid-feedback" id="title-valid-feedback">符合規則</div>
+                                    <div class="invalid-feedback" id="title-invalid-feedback">不符合規則</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">行程詳細介紹</label>
+                                    <textarea name="description" id="description" class="form-control is-invalid"
+                                        placeholder="字數100內"></textarea>
+                                    <div class="valid-feedback"></div>
+                                    <div class="invalid-feedback">尚未輸入</div>
+                                </div>
+
+                            </div>
+                            <div id="tabs-2">
+                                <div class="mb-3 col-5">
+                                    <label for="duration" class="form-label">行程天數</label>
+                                    <input type="number" name="duration" id="duration"
+                                        class="form-control form-control  is-invalid" list="durationList"
+                                        placeholder="請輸入（例：5 表示 5 天 4 夜）">
+                                    <datalist id="durationList">
+                                        <option value="5"></option>
+                                        <option value="6"></option>
+                                        <option value="7"></option>
+                                        <option value="10"></option>
+                                        <option value="12"></option>
+                                    </datalist>
+                                    <div class="valid-feedback"></div>
+                                    <div class="invalid-feedback">尚未輸入</div>
+                                </div>
+
+                                <div class="row" id="date_start_end">
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            <label for="startdatepicker" class="form-label">行程開始日期</label>
+                                            <input type="text" id="startdatepicker" class="form-control is-invalid"
+                                                placeholder="請輸入年/月/日或點選">
+                                            <div class="valid-feedback"></div>
+                                            <div class="invalid-feedback">尚未選擇</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            <label for="enddatepicker" class="form-label">行程結束日期</label>
+                                            <input type="text" id="enddatepicker" class="form-control is-invalid"
+                                                placeholder="請輸入年/月/日或點選">
+                                            <div class="valid-feedback"></div>
+                                            <div class="invalid-feedback">尚未選擇</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 col-5">
+                                    <label for="available_seats" class="form-label">可預訂人數</label>
+                                    <input type="number" name="available_seats" id="available_seats"
+                                        class="form-control form-control  is-invalid" placeholder="請輸入人數"
+                                        list="availableList">
+                                    <datalist id="availableList">
+                                        <option value="4"></option>
+                                        <option value="6"></option>
+                                        <option value="7"></option>
+                                        <option value="10"></option>
+                                        <option value="12"></option>
+                                    </datalist>
+                                    <div class="valid-feedback"></div>
+                                    <div class="invalid-feedback">尚未輸入</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="price" class="form-label">行程價格</label>
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <select name="currency" id="currency"
+                                                class="form-select form-select  is-invalid">
+                                                <option value="" class="text-center" selected disabled>請選擇幣別</option>
+                                                <option value="TWD">台幣</option>
+                                                <option value="USD">美金</option>
+                                                <option value="EUR">歐元</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-5">
+                                            <input type="number" name="price" id="price"
+                                                class="form-control form-control is-invalid" list="priceList">
+                                            <datalist id="priceList">
+                                                <option value="60000"></option>
+                                                <option value="70000"></option>
+                                                <option value="80000"></option>
+                                                <option value="90000"></option>
+                                                <option value="120000"></option>
+                                            </datalist>
+                                            <div class="valid-feedback"></div>
+                                            <div class="invalid-feedback">尚未輸入</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <div id="tabs-3">
+                                <div class="mb-3 col-6">
+                                    <label for="viewPhoto" class="form-label">景點圖片-1</label>
+                                    <input type="file" class="form-control form-control-lg" id="fileupload_first">
+                                    <div class="valid-feedback">上傳格式為jpeg or png!</div>
+                                    <div class="invalid-feedback">上傳格式錯誤!</div>
+                                    <a href="" data-lightbox="photo" id="photo-lightbox">
+                                        <img src="" alt="" class="img-fluid w-25 mt-3 d-none" id="prveImg_first">
+                                    </a>
+                                </div>
+                                <div class="mb-3 col-6">
+                                    <label for="viewPhoto" class="form-label">景點圖片-2</label>
+                                    <input type="file" class="form-control form-control-lg" id="fileupload_second">
+                                    <div class="valid-feedback">上傳格式為jpeg or png!</div>
+                                    <div class="invalid-feedback">上傳格式錯誤!</div>
+                                    <a href="" data-lightbox="photo" id="photo-lightbox">
+                                        <img src="" alt="" class="img-fluid w-25 mt-3 d-none" id="prveImg_second">
+                                    </a>
+                                </div>
+                                <div class="mb-3 col-6">
+                                    <label for="viewPhoto" class="form-label">景點圖片-3</label>
+                                    <input type="file" class="form-control form-control-lg" id="fileupload_third">
+                                    <div class="valid-feedback">上傳格式為jpeg or png!</div>
+                                    <div class="invalid-feedback">上傳格式錯誤!</div>
+                                    <a href="" data-lightbox="photo" id="photo-lightbox">
+                                        <img src="" alt="" class="img-fluid w-25 mt-3 d-none" id="prveImg_third">
+                                    </a>
+                                </div>
+                                <div class="mb-3 col-6">
+                                    <label for="viewPhoto" class="form-label">景點圖片-4</label>
+                                    <input type="file" class="form-control form-control-lg" id="fileupload_fourth">
+                                    <div class="valid-feedback">上傳格式為jpeg or png!</div>
+                                    <div class="invalid-feedback">上傳格式錯誤!</div>
+                                    <a href="" data-lightbox="photo" id="photo-lightbox">
+                                        <img src="" alt="" class="img-fluid w-25 mt-3 d-none" id="prveImg_fourth">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-lg w-50" style="background-color: #A89361;"
+                                id="ok_btn">新增</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </main> <!--end::App Main--> <!--begin::Footer-->
+
+        <footer class="app-footer"> <!--begin::To the end-->
+            <div class="float-end d-none d-sm-inline">Anything you want</div> <!--end::To the end-->
+            <!--begin::Copyright--> <strong>
+                Copyright &copy; 2014-2024&nbsp;
+                <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
+            </strong>
+            All rights reserved.
+            <!--end::Copyright-->
+        </footer> <!--end::Footer-->
+
+    </div> <!--end::App Wrapper-->
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/adminlte.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+
+        var countryTitle = [];
+        var counter = [];
+        var countryData = [];
+
+        var title;
+        var selectedCountry;
+        var selectedCityFirst;
+
+        var flag_country = false;
+        var flag_city_first = false;
+        var flag_city_second = true;
+        var flag_title = false;
+        var flag_description = false;
+        var flag_available_seats = false;
+        var flag_duration = false;
+        var flag_currency = false;
+        var flag_price = false;
+        var flag_upload = false;
+
+        var showimg_first;
+        var showimg_second;
+        var showimg_third;
+        var showimg_fourth;
+
+
+        $(function () { //begin of main function
+
+            $("#tabs").tabs();
+
+            //載入城市資料
+            $.ajax({
+                type: "GET",
+                url: "js/country_city.json",
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    console.log(data);
+                    data.forEach(function (item) {
+                        //console.log(item.display_addr.indexOf("區", 0));
+                        //console.log(item.display_addr.substring(0, item.display_addr.indexOf("區", 0) + 1));
+                        //getRegion = item.display_addr.substring(0, item.display_addr.indexOf("區", 0) + 1);
+                        getRegion = item.country_cn + "_" + item.country;
+                        if (counter[getRegion] == undefined) {
+                            counter[getRegion] = countryData.length;
+                            countryData.push(new Array());
+                            countryTitle[counter[getRegion]] = getRegion;
+                        }
+                        countryData[counter[getRegion]].push(item);
+
+                    });
+                    console.log(countryTitle);
+                    console.log(counter);
+                    console.log(countryData);
+
+                    $("#country").empty();
+                    $("#country").append(`<option value="" class="text-center" selected disabled>==請選擇==</option>`);
+                    countryTitle.forEach(function (item) {
+                        var strHTML = `<option value="${item}">${item}</option>`;
+                        $("#country").append(strHTML);
+                    });
+                },
+                error: function () {
+                    console.log("error-js/EuCity.json");
+                }
+            });
+
+            //監聽country選單
+            $("#country").change(function () {
+
+                if ($(this).val() != "") {
+                    flag_country = true;
+                    $("#country").removeClass("is-invalid");
+                    $("#country").addClass("is-valid");
+                } else {
+                    flag_country = false;
+                    $("#country").removeClass("is-valid");
+                    $("#country").addClass("is-invalid");
+                }
+
+                //console.log($(this).val());
+                selectedCountry = $(this).val();
+
+                flag_city = false;
+                flag_city_first = false;
+                flag_city_second = true;
+                $("#city_first").removeClass("is-valid");
+                $("#city_first").addClass("is-invalid");
+                $("#city_second").removeClass("is-valid");
+                $("#city_second").removeClass("is-invalid");
+                $("#city_first").empty();
+                $("#city_first").append(`<option value="" class="text-center" selected disabled>==請選擇==</option>`);
+                $("#city_second").empty();
+                $("#city_second").append(`<option value="" class="text-center" selected disabled>==請選擇==</option>`);
+                countryTitle.forEach(function (item) {
+                    if (item == selectedCountry) {
+                        countryData[counter[item]].forEach(function (item_city) {
+                            //console.log(item_city.city_cn);
+                            var strHTML = `<option value="${item_city.city_cn}_${item_city.city}">${item_city.city_cn} (${item_city.city})</option>`;
+                            $("#city_first").append(strHTML);
+                        });
+
+                    }
+                });
+
+
+
+                //載入旅遊行程名稱
+                $.ajax({
+                    type: "GET",
+                    url: "js/travel title.json",
+                    dataType: "json",
+                    async: false,
+                    success: function (data) {
+                        console.log(data);
+                        title = data;
+                    },
+                    error: function () {
+                        console.log("error-js/travel title.json");
+                    }
+                });
+
+                $("#title_list").empty();
+                title.forEach(function (item) {
+                    if ((item.country_cn + "_" + item.country) == selectedCountry) {
+                        console.log(countryData[counter[selectedCountry]].country);
+                        var strHTML = `<option value="${item.title}">${item.title}</option>`;
+                        $("#title_list").append(strHTML);
+
+                    }
+                });
+
+            });
+
+            //監聽citfy_first選單
+            $("#city_first").change(function () {
+
+                if ($(this).val() != "") {
+                    flag_city_first = true;
+                    $("#city_first").removeClass("is-invalid");
+                    $("#city_first").addClass("is-valid");
+                } else {
+                    flag_city_first = false;
+                    $("#city_first").removeClass("is-valid");
+                    $("#city_first").addClass("is-invalid");
+                }
+
+                selectedCityFirst = $(this).val();
+                console.log(selectedCityFirst);
+
+                flag_city_second = true;
+                $("#city_second").empty();
+                $("#city_second").append(`<option value="" class="text-center" selected disabled>==請選擇==</option>`);
+
+                countryTitle.forEach(function (item) {
+                    if (item == selectedCountry) {
+                        countryData[counter[item]].forEach(function (item_city) {
+                            if ((item_city.city_cn + "_" + item_city.city) == selectedCityFirst) {
+                                console.log(item_city.city_cn);
+                                var strHTML = `<option value="${item_city.city_cn}_${item_city.city}" disabled>${item_city.city_cn} (${item_city.city})</option>`;
+
+                            } else {
+                                var strHTML = `<option value="${item_city.city_cn}_${item_city.city}">${item_city.city_cn} (${item_city.city})</option>`;
+                            }
+                            //console.log(item_city.city_cn);
+
+                            $("#city_second").append(strHTML);
+                        });
+
+                    }
+                });
+            });
+
+            //監聽city_secon選單
+            $("#city_second").change(function () {
+
+                if ($(this).val() != "") {
+                    flag_city_second = true;
+                    $("#city_second").removeClass("is-invalid");
+                    $("#city_second").addClass("is-valid");
+                }
+            });
+
+            //監聽title選單
+            $("#title").bind("input propertychange", function () {
+                if ($(this).length < 51) {
+                    flag_title = true;
+                    //$("#title").removeClass("is-invalid");
+                    //$("#title").addClass("is-valid");
+
+                    var JSONdata = {};
+                    JSONdata["title"] = $(this).val();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "prj_tour_pack_control_api.php?action=chkuni",
+                        data: JSON.stringify(JSONdata),
+                        dataType: "json",
+                        success: showdata_check_uni,
+                        error: function () {
+                            alert("error-prj_tour_pack_control_api.php?action=chkuni");
+                        }
+                    });
+
+                } else {
+                    flag_title = false;
+                    $("#title").removeClass("is-valid");
+                    $("#title").addClass("is-invalid");
+                    $("#title-invalid-feedback").text("不符合規則");
+                }
+            });
+
+
+            //監聽description選單
+            $("#description").bind("input propertychange", function () {
+
+                if ($(this).length < 101 && $(this).val() != '') {
+                    flag_description = true;
+                    $("#description").removeClass("is-invalid");
+                    $("#description").addClass("is-valid");
+                } else {
+                    flag_description = false;
+                    $("#description").removeClass("is-valid");
+                    $("#description").addClass("is-invalid");
+                }
+            });
+
+            $("#enddatepicker").prop("disabled", true); // 先禁用結束日期選擇器
+
+            $("#startdatepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                dateFormat: "yy-mm-dd",
+                yearRange: "2025:2035",
+                currentText: "Now",
+                minDate: 7,
+                onSelect: function (selectedDate) {
+                    var minEndDate = new Date(selectedDate);
+                    var duration = parseInt($("#duration").val()); // 設定duration輸入的天數
+
+                    minEndDate.setDate(minEndDate.getDate() + duration); // 讓結束日期比開始日期晚 設定duration輸入的天數
+                    $("#enddatepicker").datepicker("option", "minDate", minEndDate);
+                    $("#enddatepicker").datepicker("setDate", minEndDate);
+                    $("#enddatepicker").prop("disabled", false); // 啟用結束日期選擇器
+                    $("#startdatepicker").removeClass("is-invalid");
+                    $("#startdatepicker").addClass("is-valid");
+                    $("#enddatepicker").removeClass("is-invalid");
+                    $("#enddatepicker").addClass("is-valid");
+
+                }
+            });
+
+            $("#enddatepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                dateFormat: "yy-mm-dd",
+                yearRange: "2025:2035",
+                onSelect: function (selectedDate) {
+                    let startDate = $("#startdatepicker").datepicker("getDate");
+                    let endDate = new Date(selectedDate);
+                    if (startDate) {
+                        let duration = Math.round((endDate - startDate) / (1000 * 60 * 60 * 24));
+                        $("#duration").val(duration); // 更新行程天數
+                    }
+                }
+            });
+
+            $("#duration").bind("input propertychange", function () {
+                if ($(this).val() != "") {
+                    $("#date_start_end").removeClass("d-none");
+                    let startDate = $("#startdatepicker").datepicker("getDate");
+                    let duration = parseInt($(this).val()) || 7; // 預設 7 天
+                    if (startDate) {
+                        let endDate = new Date(startDate);
+                        endDate.setDate(startDate.getDate() + duration);
+                        $("#enddatepicker").datepicker("setDate", endDate);
+                    }
+                    flag_duration = true;
+                    $("#duration").removeClass("is-invalid");
+                    $("#duration").addClass("is-valid");
+                } else {
+                    $("#startdatepicker").datepicker("setDate", null);
+                    $("#enddatepicker").datepicker("setDate", null);
+                    $("#date_start_end").addClass("d-none");
+                    $("#startdatepicker").addClass("is-invalid");
+                    $("#enddatepicker").addClass("is-invalid");
+                    flag_duration = false;
+                    $("#duration").removeClass("is-valid");
+                    $("#duration").addClass("is-invalid");
+                }
+            });
+
+            //監聽available_seats選單
+            $("#available_seats").bind("input propertychange", function () {
+
+                if ($(this).val() != "") {
+                    flag_available_seats = true;
+                    $("#available_seats").removeClass("is-invalid");
+                    $("#available_seats").addClass("is-valid");
+                } else {
+                    flag_available_seats = false;
+                    $("#available_seats").removeClass("is-valid");
+                    $("#available_seats").addClass("is-invalid");
+                }
+            });
+
+            //監聽currency選單
+            $("#currency").change(function () {
+
+                if ($(this).val() != "") {
+                    flag_currency = true;
+                    $("#currency").removeClass("is-invalid");
+                    $("#currency").addClass("is-valid");
+                } else {
+                    flag_currency = false;
+                    $("#currency").removeClass("is-valid");
+                    $("#currency").addClass("is-invalid");
+                }
+            });
+
+            //監聽price選單
+            $("#price").bind("input propertychange", function () {
+
+                if ($(this).val() != "") {
+                    flag_price = true;
+                    $("#price").removeClass("is-invalid");
+                    $("#price").addClass("is-valid");
+                } else {
+                    flag_price = false;
+                    $("#price").removeClass("is-valid");
+                    $("#price").addClass("is-invalid");
+                }
+            });
+
+            // 選擇上傳的圖片
+            $("#fileupload_first").change(function () {
+                // console.log(fileupload_first);
+                // console.log(fileupload_first.files[0]);
+                // console.log(fileupload_first.files[0].type);
+
+                if (fileupload_first.files[0].type == "image/jpeg" || fileupload_first.files[0].type == "image/png") {
+                    console.log(URL.createObjectURL(fileupload_first.files[0]));
+                    $("#prveImg_first").removeClass("d-none");
+                    $("#prveImg_first").attr("src", URL.createObjectURL(fileupload_first.files[0]));
+                    $("#photo-lightbox").attr("href", URL.createObjectURL(fileupload_first.files[0]));
+                    showimg_first = generateFilename(fileupload_first.files[0].name);
+
+                    //顯示feedback
+                    $("#fileupload_first").removeClass("is-invalid");
+                    $("#fileupload_first").addClass("is-valid");
+
+                    flag_upload = true;
+                } else {
+                    //顯示feedback
+                    $("#fileupload_first").removeClass("is-valid");
+                    $("#fileupload_first").addClass("is-invalid");
+                    $("#prveImg_first").addClass("d-none");
+
+                    flag_upload = false;
+
+                    //alert("只支援jpeg or png!");
+                }
+            });
+
+            // 選擇上傳的圖片
+            $("#fileupload_second").change(function () {
+
+                if (fileupload_second.files[0].type == "image/jpeg" || fileupload_second.files[0].type == "image/png") {
+                    console.log(URL.createObjectURL(fileupload_second.files[0]));
+                    $("#prveImg_second").removeClass("d-none");
+                    $("#prveImg_second").attr("src", URL.createObjectURL(fileupload_second.files[0]));
+                    $("#photo-lightbox").attr("href", URL.createObjectURL(fileupload_second.files[0]));
+                    showimg_second = generateFilename(fileupload_second.files[0].name);
+
+                    //顯示feedback
+                    $("#fileupload_second").removeClass("is-invalid");
+                    $("#fileupload_second").addClass("is-valid");
+
+                    flag_upload = true;
+                } else {
+                    //顯示feedback
+                    $("#fileupload_second").removeClass("is-valid");
+                    $("#fileupload_second").addClass("is-invalid");
+                    $("#prveImg_second").addClass("d-none");
+
+                    flag_upload = false;
+
+                    //alert("只支援jpeg or png!");
+                }
+            });
+
+            // 選擇上傳的圖片
+            $("#fileupload_third").change(function () {
+
+
+                if (fileupload_third.files[0].type == "image/jpeg" || fileupload_third.files[0].type == "image/png") {
+                    console.log(URL.createObjectURL(fileupload_third.files[0]));
+                    $("#prveImg_third").removeClass("d-none");
+                    $("#prveImg_third").attr("src", URL.createObjectURL(fileupload_third.files[0]));
+                    $("#photo-lightbox").attr("href", URL.createObjectURL(fileupload_third.files[0]));
+                    showimg_third = generateFilename(fileupload_third.files[0].name);
+
+                    //顯示feedback
+                    $("#fileupload_third").removeClass("is-invalid");
+                    $("#fileupload_third").addClass("is-valid");
+
+                    flag_upload = true;
+                } else {
+                    //顯示feedback
+                    $("#fileupload_third").removeClass("is-valid");
+                    $("#fileupload_third").addClass("is-invalid");
+                    $("#prveImg_third").addClass("d-none");
+
+                    flag_upload = false;
+
+                    //alert("只支援jpeg or png!");
+                }
+            });
+
+            // 選擇上傳的圖片
+            $("#fileupload_fourth").change(function () {
+
+
+                if (fileupload_third.files[0].type == "image/jpeg" || fileupload_third.files[0].type == "image/png") {
+                    console.log(URL.createObjectURL(fileupload_third.files[0]));
+                    $("#prveImg_fourth").removeClass("d-none");
+                    $("#prveImg_fourth").attr("src", URL.createObjectURL(fileupload_third.files[0]));
+                    $("#photo-lightbox").attr("href", URL.createObjectURL(fileupload_third.files[0]));
+                    showimg_fourth = generateFilename(fileupload_fourth.files[0].name);
+
+                    //顯示feedback
+                    $("#fileupload_fourth").removeClass("is-invalid");
+                    $("#fileupload_fourth").addClass("is-valid");
+
+                    flag_upload = true;
+                } else {
+                    //顯示feedback
+                    $("#fileupload_fourth").removeClass("is-valid");
+                    $("#fileupload_fourth").addClass("is-invalid");
+                    $("#prveImg_fourth").addClass("d-none");
+
+                    flag_upload = false;
+
+                    //alert("只支援jpeg or png!");
+                }
+            });
+
+            //監聽按鈕 ok_btn
+            $("#ok_btn").click(function () {
+                //if (flag_country && flag_city && flag_title && flag_description && flag_duration && flag_currency && flag_price && flag_available_seats) {
+                if (true) {
+                    //傳遞至後端API 執行新增
+
+                    var dataJSON = {};
+                    dataJSON["title"] = $("#title").val();
+                    dataJSON["description"] = $("#description").val();
+                    dataJSON["country"] = $("#country").val();
+                    dataJSON["city_first"] = $("#city_first").val();
+                    dataJSON["city_second"] = $("#city_second").val();
+                    dataJSON["duration"] = $("#duration").val();
+                    dataJSON["price"] = $("#price").val();
+                    dataJSON["currency"] = $("#currency").val();
+                    dataJSON["available_seats"] = $("#available_seats").val();
+                    dataJSON["start_date"] = $("#startdatepicker").val();
+                    dataJSON["end_date"] = $("#enddatepicker").val();
+                    //dataJSON["status"] = $("#status").val();
+                    dataJSON["photo_first"] = showimg_first;
+                    dataJSON["photo_second"] = showimg_second;
+                    dataJSON["photo_third"] = showimg_third;
+                    dataJSON["photo_fourth"] = showimg_fourth;
+                    console.log(JSON.stringify(dataJSON));
+
+                    $.ajax({
+                        type: "POST",
+                        url: "prj_tour_pack_control_api.php?action=insert",
+                        dataType: "json",
+                        data: JSON.stringify(dataJSON),
+                        success: function (data) {
+                            console.log(data);
+                            if (data.state) {
+                                Swal.fire({
+                                    icon: "success",
+                                    title: data.message,
+                                    showDenyButton: false,
+                                    showCancelButton: false,
+                                    confirmButtonText: "確認",
+                                    denyButtonText: `Don't save`,
+                                    allowOutsideClick: false,
+                                }).then((result) => {
+                                    /* Read more about isConfirmed, isDenied below */
+                                    if (result.isConfirmed) {
+                                        location.href = "prj_tour_pack_R.html";
+                                    }
+                                });
+                            } else {
+                                alert(data.message);
+                            }
+                        },
+                        error: function () {
+                            alert("error-250109-C.php");
+                        }
+                    });
+
+                    if (showimg_first != undefined) {
+                        if (flag_upload) {
+                            console.log("可上傳至後端!");
+                            //*************************
+                            //傳遞至資料後端api
+                            var formData = new FormData();
+                            formData.append("file", fileupload_first.files[0], showimg_first);
+                            console.log(formData);
+
+                            $.ajax({
+                                type: "POST",
+                                url: "prj_tour_pack_control_api.php?action=upload",
+                                data: formData,
+                                dataType: "json",
+                                cache: false,
+                                contentType: false,
+                                processData: false,
+                                success: function (data) {
+                                    console.log(data);
+                                    // showimg = data.location;
+                                },
+                                error: function () {
+                                    console.log("error-241224-1-fileupload_api.php");
+                                }
+                            });
+
+                        } else {
+                            console.log("格式錯誤不可以上傳至後端!");
+                            alert("格式錯誤不可以上傳至後端!");
+                        }
+                    }
+
+                    if (showimg_second != undefined) {
+                        if (flag_upload) {
+                            console.log("可上傳至後端!");
+                            //*************************
+                            //傳遞至資料後端api
+                            var formData = new FormData();
+                            formData.append("file", fileupload_second.files[0], showimg_second);
+                            console.log(formData);
+
+                            $.ajax({
+                                type: "POST",
+                                url: "prj_tour_pack_control_api.php?action=upload",
+                                data: formData,
+                                dataType: "json",
+                                cache: false,
+                                contentType: false,
+                                processData: false,
+                                success: function (data) {
+                                    console.log(data);
+                                    // showimg = data.location;
+                                },
+                                error: function () {
+                                    console.log("error-241224-1-fileupload_api.php");
+                                }
+                            });
+
+                        } else {
+                            console.log("格式錯誤不可以上傳至後端!");
+                            alert("格式錯誤不可以上傳至後端!");
+                        }
+                    }
+
+                    if (showimg_third != undefined) {
+                        if (flag_upload) {
+                            console.log("可上傳至後端!");
+                            //*************************
+                            //傳遞至資料後端api
+                            var formData = new FormData();
+                            formData.append("file", fileupload_third.files[0], showimg_third);
+                            console.log(formData);
+
+                            $.ajax({
+                                type: "POST",
+                                url: "prj_tour_pack_control_api.php?action=upload",
+                                data: formData,
+                                dataType: "json",
+                                cache: false,
+                                contentType: false,
+                                processData: false,
+                                success: function (data) {
+                                    console.log(data);
+                                    // showimg = data.location;
+                                },
+                                error: function () {
+                                    console.log("error-241224-1-fileupload_api.php");
+                                }
+                            });
+
+                        } else {
+                            console.log("格式錯誤不可以上傳至後端!");
+                            alert("格式錯誤不可以上傳至後端!");
+                        }
+                    }
+                    if (showimg_fourth != undefined) {
+                        if (flag_upload) {
+                            console.log("可上傳至後端!");
+                            //*************************
+                            //傳遞至資料後端api
+                            var formData = new FormData();
+                            formData.append("file", fileupload_fourth.files[0], showimg_fourth);
+                            console.log(formData);
+
+                            $.ajax({
+                                type: "POST",
+                                url: "prj_tour_pack_control_api.php?action=upload",
+                                data: formData,
+                                dataType: "json",
+                                cache: false,
+                                contentType: false,
+                                processData: false,
+                                success: function (data) {
+                                    console.log(data);
+                                    // showimg = data.location;
+                                },
+                                error: function () {
+                                    console.log("error-241224-1-fileupload_api.php");
+                                }
+                            });
+
+                        } else {
+                            console.log("格式錯誤不可以上傳至後端!");
+                            alert("格式錯誤不可以上傳至後端!");
+                        }
+                    }
+
+                } else {
+                    Swal.fire({
+                        title: "欄位輸入錯誤或空白!",
+                        icon: "error"
+                    });
+                }
+            });
+
+            //確認uid001是否存在
+            // if (getCookie("uid01")) {
+            //     //將uid01傳遞至後端API執行驗證
+            //     //input: {"uid01" : "owner01"}
+            //     console.log(getCookie("level"));
+            //     var JSONdata = {};
+            //     JSONdata["uid01"] = getCookie("uid01");
+
+            //     $.ajax({
+            //         type: "POST",
+            //         url: "prj_member_control_api.php?action=chkuid",
+            //         data: JSON.stringify(JSONdata),
+            //         dataType: "json",
+            //         success: showdata_checkuid,
+            //         error: function () {
+            //             Swal.fire({
+            //                 title: "API介接錯誤",
+            //                 text: "prj_member_control_api.php?action=chkuid",
+            //                 icon: "error"
+            //             });
+            //         }
+            //     });
+            // } else {
+            //     Swal.fire({
+            //         title: "請先登入會員",
+            //         showDenyButton: false,
+            //         showCancelButton: false,
+            //         confirmButtonText: "確認",
+            //         denyButtonText: `Don't save`,
+            //         allowOutsideClick: false
+            //     }).then((result) => {
+            //         /* Read more about isConfirmed, isDenied below */
+            //         if (result.isConfirmed) {
+            //             location.href = "prj_SPA.html"
+            //         }
+            //     });
+            // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        });//end of main function
+
+        function showdata_check_uni(data) {
+            console.log(data);
+            if (data.state) {
+                $("#title").removeClass("is-invalid");
+                $("#title").addClass("is-valid");
+                $("#title-valid-feedback").text(data.message);
+                flag_title = true;
+
+            } else {
+                $("#title").removeClass("is-valid");
+                $("#title").addClass("is-invalid");
+                $("#title-invalid-feedback").text(data.message);
+                flag_title = false;
+            }
+
+        }
+
+
+        //驗證UID01監聽-成功
+        function showdata_checkuid(data) {
+            if (data.state) {
+
+                console.log(data)
+                //顯示歡迎訊息
+                $("#s02_username_showtext").removeClass("d-none");
+                $("#s02_username_text").text(data.data.username);
+
+                //隱藏註冊與登入按鈕
+                $("#s02_reg_btn").addClass("d-none");
+                $("#s02_login_btn").addClass("d-none");
+
+                //顯示登出按鈕
+                $("#s02_logout_btn").removeClass("d-none");
+
+                $("#afterLogin").removeClass("d-none");
+
+                if (data.data.level == 50) {
+                    $("#adminOnly").removeClass("d-none");
+                    $("#s02_username_showtext").text("歡迎管理員：" + data.data.username);
+                }
+
+                // //顯示控制台按鈕
+                // $("#s02_admin_btn").removeClass("d-none");
+
+                // //顯示口罩地圖按鈕
+                // $("#s02_maskmap_btn").removeClass("d-none");
+
+                // //顯示會員按鈕
+                // $("#s02_member_btn").removeClass("d-none");
+            }
+        }
+
+        //from W3C--讀取cookie
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        //from W3C--寫入cookie
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function generateFilename(fileName) {
+            const now = new Date();
+            const date = now.getFullYear().toString() +
+                ('0' + (now.getMonth() + 1)).slice(-2) +
+                ('0' + now.getDate()).slice(-2);
+            const milliseconds = ('00' + now.getMilliseconds()).slice(-3);
+
+            return date + milliseconds + "_" + fileName;
+        }
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
